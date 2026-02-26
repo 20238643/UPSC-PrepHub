@@ -1,0 +1,455 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Quiz Results | UPSC PrepHub</title>
+    <meta name="description" content="View your UPSC PrepHub quiz results and performance analysis.">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700;800&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --navy: #1a2a6c;
+            --accent: #f39c12;
+            --bg: #f0f2f5;
+            --white: #ffffff;
+            --text: #2c3e50;
+            --success: #27ae60;
+            --danger: #e74c3c;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            background: linear-gradient(135deg, #1a2a6c 0%, #2c3e7a 50%, #1a2a6c 100%);
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            padding: 40px 20px;
+            color: var(--text);
+        }
+
+        .results-card {
+            background: white;
+            border-radius: 24px;
+            padding: 50px 40px;
+            max-width: 700px;
+            width: 100%;
+            box-shadow: 0 30px 60px rgba(0, 0, 0, 0.3);
+            text-align: center;
+            animation: slideUp 0.6s ease;
+        }
+
+        @keyframes slideUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .subject-badge {
+            display: inline-block;
+            background: var(--navy);
+            color: white;
+            padding: 6px 20px;
+            border-radius: 50px;
+            font-size: 0.8rem;
+            font-weight: 700;
+            letter-spacing: 1px;
+            text-transform: uppercase;
+            margin-bottom: 20px;
+        }
+
+        .results-card h1 {
+            font-size: 2rem;
+            color: var(--navy);
+            margin-bottom: 10px;
+        }
+
+        .score-circle {
+            width: 180px;
+            height: 180px;
+            border-radius: 50%;
+            margin: 30px auto;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            font-size: 3rem;
+            font-weight: 800;
+            color: white;
+            position: relative;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+        }
+
+        .score-circle .score-label {
+            font-size: 0.9rem;
+            font-weight: 400;
+            opacity: 0.85;
+        }
+
+        .grade-excellent {
+            background: linear-gradient(135deg, #27ae60, #2ecc71);
+        }
+
+        .grade-good {
+            background: linear-gradient(135deg, #2980b9, #3498db);
+        }
+
+        .grade-average {
+            background: linear-gradient(135deg, #f39c12, #f1c40f);
+        }
+
+        .grade-poor {
+            background: linear-gradient(135deg, #e74c3c, #c0392b);
+        }
+
+        .performance-badge {
+            font-size: 1.5rem;
+            font-weight: 700;
+            margin-bottom: 8px;
+        }
+
+        .performance-msg {
+            color: #666;
+            font-size: 0.95rem;
+            margin-bottom: 30px;
+        }
+
+        .stats-row {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 15px;
+            margin: 30px 0;
+        }
+
+        .stat-box {
+            background: var(--bg);
+            border-radius: 12px;
+            padding: 20px 10px;
+        }
+
+        .stat-box .stat-num {
+            font-size: 1.8rem;
+            font-weight: 800;
+            color: var(--navy);
+        }
+
+        .stat-box .stat-label {
+            font-size: 0.75rem;
+            color: #888;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            margin-top: 4px;
+        }
+
+        .stat-correct .stat-num {
+            color: var(--success);
+        }
+
+        .stat-wrong .stat-num {
+            color: var(--danger);
+        }
+
+        .review-section {
+            text-align: left;
+            margin-top: 30px;
+        }
+
+        .review-section h3 {
+            font-size: 1.1rem;
+            color: var(--navy);
+            margin-bottom: 15px;
+            padding-bottom: 10px;
+            border-bottom: 2px solid var(--bg);
+        }
+
+        .review-item {
+            background: var(--bg);
+            border-radius: 10px;
+            padding: 15px;
+            margin-bottom: 10px;
+            border-left: 4px solid transparent;
+        }
+
+        .review-item.correct {
+            border-left-color: var(--success);
+        }
+
+        .review-item.wrong {
+            border-left-color: var(--danger);
+        }
+
+        .review-item.skipped {
+            border-left-color: #bdc3c7;
+        }
+
+        .review-item .q-num {
+            font-size: 0.7rem;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            margin-bottom: 5px;
+        }
+
+        .review-item.correct .q-num {
+            color: var(--success);
+        }
+
+        .review-item.wrong .q-num {
+            color: var(--danger);
+        }
+
+        .review-item.skipped .q-num {
+            color: #95a5a6;
+        }
+
+        .review-item .q-text {
+            font-size: 0.9rem;
+            font-weight: 600;
+            color: var(--text);
+            margin-bottom: 8px;
+        }
+
+        .review-item .answer-row {
+            font-size: 0.82rem;
+            color: #555;
+        }
+
+        .answer-row span {
+            font-weight: 600;
+        }
+
+        .answer-row .your-ans {
+            color: var(--danger);
+        }
+
+        .answer-row .correct-ans {
+            color: var(--success);
+        }
+
+        .btn-group {
+            display: flex;
+            gap: 15px;
+            margin-top: 35px;
+            flex-wrap: wrap;
+        }
+
+        .btn {
+            flex: 1;
+            padding: 14px 20px;
+            border-radius: 10px;
+            border: none;
+            font-size: 0.95rem;
+            font-weight: 700;
+            cursor: pointer;
+            text-decoration: none;
+            text-align: center;
+            transition: all 0.3s;
+            min-width: 140px;
+        }
+
+        .btn-primary {
+            background: var(--navy);
+            color: white;
+        }
+
+        .btn-primary:hover {
+            background: #2a3a7c;
+            transform: translateY(-2px);
+            box-shadow: 0 8px 20px rgba(26, 42, 108, 0.3);
+        }
+
+        .btn-secondary {
+            background: var(--bg);
+            color: var(--navy);
+        }
+
+        .btn-secondary:hover {
+            background: #e0e5f0;
+            transform: translateY(-2px);
+        }
+
+        .btn-accent {
+            background: var(--accent);
+            color: white;
+        }
+
+        .btn-accent:hover {
+            background: #e67e22;
+            transform: translateY(-2px);
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="results-card">
+        <span class="subject-badge" id="subject-badge">Loading...</span>
+        <h1>Assessment Complete!</h1>
+
+        <div class="score-circle" id="score-circle">
+            <div id="score-display">0/0</div>
+            <div class="score-label" id="percent-display">0%</div>
+        </div>
+
+        <div class="performance-badge" id="perf-badge">—</div>
+        <p class="performance-msg" id="perf-msg">Loading your results...</p>
+
+        <div class="stats-row">
+            <div class="stat-box stat-correct">
+                <div class="stat-num" id="stat-correct">0</div>
+                <div class="stat-label">✅ Correct</div>
+            </div>
+            <div class="stat-box stat-wrong">
+                <div class="stat-num" id="stat-wrong">0</div>
+                <div class="stat-label">❌ Wrong</div>
+            </div>
+            <div class="stat-box">
+                <div class="stat-num" id="stat-skipped">0</div>
+                <div class="stat-label">⏭️ Skipped</div>
+            </div>
+        </div>
+
+        <div class="review-section">
+            <h3>📋 Question Review</h3>
+            <div id="review-container"></div>
+        </div>
+
+        <div class="btn-group">
+            <a href="index.html" class="btn btn-secondary">🏠 Home</a>
+            <button class="btn btn-accent" id="retry-btn" onclick="retryQuiz()">🔄 Retry</button>
+            <a href="index.html#subjects" class="btn btn-primary">📚 New Subject</a>
+        </div>
+    </div>
+
+    <div class="save-status" id="save-status"
+        style="display:none; text-align:center; margin-top:15px; padding:10px 16px; border-radius:8px; font-size:0.85rem; font-weight:600;">
+    </div>
+
+    <script>
+        const resultData = JSON.parse(localStorage.getItem('quizResult') || '{}');
+        const { subject, score, total, answers } = resultData;
+
+        if (!subject || total === undefined) {
+            document.querySelector('.results-card').innerHTML = `
+                <h1 style="color:#1a2a6c">No Results Found</h1>
+                <p style="margin:20px 0; color:#666">Please complete a quiz first.</p>
+                <a href="index.html" class="btn btn-primary" style="display:inline-block; padding:14px 30px; background:#1a2a6c; color:white; border-radius:10px; text-decoration:none; font-weight:700;">Go to Home</a>
+            `;
+        } else {
+            const percent = Math.round((score / total) * 100);
+            const skipped = (answers || []).filter(a => !a.selected).length;
+            const wrong = total - score - skipped;
+
+            document.getElementById('subject-badge').textContent = subject + ' Assessment';
+            document.getElementById('score-display').textContent = `${score}/${total}`;
+            document.getElementById('percent-display').textContent = `${percent}%`;
+            document.getElementById('stat-correct').textContent = score;
+            document.getElementById('stat-wrong').textContent = wrong;
+            document.getElementById('stat-skipped').textContent = skipped;
+
+            const circle = document.getElementById('score-circle');
+            let badge, msg, gradeClass;
+
+            if (percent >= 80) {
+                badge = '🏆 Excellent!';
+                msg = 'Outstanding performance! You are well-prepared for UPSC.';
+                gradeClass = 'grade-excellent';
+            } else if (percent >= 60) {
+                badge = '👍 Good Job!';
+                msg = 'Solid performance. Keep revising the topics you missed.';
+                gradeClass = 'grade-good';
+            } else if (percent >= 40) {
+                badge = '📖 Keep Studying';
+                msg = 'Average score. Focus on weak areas and practice more.';
+                gradeClass = 'grade-average';
+            } else {
+                badge = '💪 Don\'t Give Up!';
+                msg = 'Needs improvement. Review the subject thoroughly and retry.';
+                gradeClass = 'grade-poor';
+            }
+
+            circle.classList.add(gradeClass);
+            document.getElementById('perf-badge').textContent = badge;
+            document.getElementById('perf-msg').textContent = msg;
+
+            // Build review
+            const container = document.getElementById('review-container');
+            (answers || []).forEach((a, i) => {
+                const div = document.createElement('div');
+                let status, statusClass;
+
+                if (!a.selected) {
+                    status = '⏭️ SKIPPED';
+                    statusClass = 'skipped';
+                } else if (a.selected === a.correct) {
+                    status = '✅ CORRECT';
+                    statusClass = 'correct';
+                } else {
+                    status = '❌ WRONG';
+                    statusClass = 'wrong';
+                }
+
+                div.className = `review-item ${statusClass}`;
+                div.innerHTML = `
+                    <div class="q-num">Q${i + 1} — ${status}</div>
+                    <div class="q-text">${a.question}</div>
+                    ${a.selected && a.selected !== a.correct ? `<div class="answer-row">Your answer: <span class="your-ans">${a.selected}</span></div>` : ''}
+                    ${statusClass !== 'correct' ? `<div class="answer-row">Correct answer: <span class="correct-ans">${a.correct}</span></div>` : ''}
+                `;
+                container.appendChild(div);
+            });
+
+            // ── Save quiz result to MongoDB ──
+            const userEmail = localStorage.getItem('userEmail');
+            const saveStatus = document.getElementById('save-status');
+
+            if (userEmail) {
+                fetch('/api/quiz-history', {
+                    method: 'POST',
+                    headers: { 'Content-Type': 'application/json' },
+                    body: JSON.stringify({ email: userEmail, subject, score, total })
+                })
+                    .then(r => r.json())
+                    .then(data => {
+                        if (data.success) {
+                            saveStatus.textContent = '✅ Result saved to your history';
+                            saveStatus.style.display = 'block';
+                            saveStatus.style.background = '#eafaf1';
+                            saveStatus.style.color = '#27ae60';
+                            saveStatus.style.border = '1px solid #a9dfbf';
+                        }
+                    })
+                    .catch(() => { /* silently fail */ });
+            } else {
+                saveStatus.innerHTML = '💡 <a href="login.html" style="color:#f39c12; font-weight:700; text-decoration:none;">Log in</a> to save your quiz results and track your progress!';
+                saveStatus.style.display = 'block';
+                saveStatus.style.background = '#fef9e7';
+                saveStatus.style.color = '#7d6608';
+                saveStatus.style.border = '1px solid #f9e79f';
+            }
+        }
+
+        function retryQuiz() {
+            if (subject) {
+                window.location.href = `quiz.html?subject=${encodeURIComponent(subject)}`;
+            } else {
+                window.location.href = 'index.html';
+            }
+        }
+    </script>
+</body>
+
+</html>

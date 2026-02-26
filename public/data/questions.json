@@ -1,0 +1,1661 @@
+{
+    "Geography": [
+        {
+            "id": "geo_1",
+            "question_text": "Which is the longest river in India?",
+            "option_a": "Ganga",
+            "option_b": "Godavari",
+            "option_c": "Brahmaputra",
+            "option_d": "Yamuna",
+            "correct_option": "Ganga"
+        },
+        {
+            "id": "geo_2",
+            "question_text": "The Tropic of Cancer passes through how many Indian states?",
+            "option_a": "6",
+            "option_b": "7",
+            "option_c": "8",
+            "option_d": "9",
+            "correct_option": "8"
+        },
+        {
+            "id": "geo_3",
+            "question_text": "Which river is known as the 'Dakshina Ganga'?",
+            "option_a": "Krishna",
+            "option_b": "Cauvery",
+            "option_c": "Godavari",
+            "option_d": "Mahanadi",
+            "correct_option": "Godavari"
+        },
+        {
+            "id": "geo_4",
+            "question_text": "The Sundarbans delta is formed by which rivers?",
+            "option_a": "Ganga and Brahmaputra",
+            "option_b": "Ganga and Yamuna",
+            "option_c": "Indus and Jhelum",
+            "option_d": "Krishna and Godavari",
+            "correct_option": "Ganga and Brahmaputra"
+        },
+        {
+            "id": "geo_5",
+            "question_text": "Which is the highest peak in India?",
+            "option_a": "Nanda Devi",
+            "option_b": "K2",
+            "option_c": "Kangchenjunga",
+            "option_d": "Mount Everest",
+            "correct_option": "Kangchenjunga"
+        },
+        {
+            "id": "geo_6",
+            "question_text": "The Palk Strait separates India from which country?",
+            "option_a": "Maldives",
+            "option_b": "Sri Lanka",
+            "option_c": "Bangladesh",
+            "option_d": "Myanmar",
+            "correct_option": "Sri Lanka"
+        },
+        {
+            "id": "geo_7",
+            "question_text": "Which cloud type is associated with thunderstorms?",
+            "option_a": "Cirrus",
+            "option_b": "Stratus",
+            "option_c": "Cumulus",
+            "option_d": "Cumulonimbus",
+            "correct_option": "Cumulonimbus"
+        },
+        {
+            "id": "geo_8",
+            "question_text": "The Western Ghats are also known as:",
+            "option_a": "Sahyadri",
+            "option_b": "Vindhya",
+            "option_c": "Aravalli",
+            "option_d": "Satpura",
+            "correct_option": "Sahyadri"
+        },
+        {
+            "id": "geo_9",
+            "question_text": "Which Indian state has the longest coastline?",
+            "option_a": "Maharashtra",
+            "option_b": "Tamil Nadu",
+            "option_c": "Andhra Pradesh",
+            "option_d": "Gujarat",
+            "correct_option": "Gujarat"
+        },
+        {
+            "id": "geo_10",
+            "question_text": "The Chilika Lake, a famous lagoon, is located in which state?",
+            "option_a": "West Bengal",
+            "option_b": "Andhra Pradesh",
+            "option_c": "Odisha",
+            "option_d": "Kerala",
+            "correct_option": "Odisha"
+        },
+        {
+            "id": "geo_11",
+            "question_text": "Which pass connects Leh with Manali?",
+            "option_a": "Rohtang Pass",
+            "option_b": "Zoji La",
+            "option_c": "Nathu La",
+            "option_d": "Banihal Pass",
+            "correct_option": "Rohtang Pass"
+        },
+        {
+            "id": "geo_12",
+            "question_text": "The Deccan Plateau is bounded by which mountain ranges?",
+            "option_a": "Himalayas and Vindhyas",
+            "option_b": "Western Ghats and Eastern Ghats",
+            "option_c": "Aravalli and Satpura",
+            "option_d": "Nilgiris and Cardamom Hills",
+            "correct_option": "Western Ghats and Eastern Ghats"
+        },
+        {
+            "id": "geo_13",
+            "question_text": "Which is the largest desert in India?",
+            "option_a": "Rann of Kutch",
+            "option_b": "Thar Desert",
+            "option_c": "Ladakh Desert",
+            "option_d": "Spiti Desert",
+            "correct_option": "Thar Desert"
+        },
+        {
+            "id": "geo_14",
+            "question_text": "The 'Ring of Fire' is associated with which ocean?",
+            "option_a": "Atlantic Ocean",
+            "option_b": "Indian Ocean",
+            "option_c": "Pacific Ocean",
+            "option_d": "Arctic Ocean",
+            "correct_option": "Pacific Ocean"
+        },
+        {
+            "id": "geo_15",
+            "question_text": "Which Indian state is known as the 'Land of Five Rivers'?",
+            "option_a": "Haryana",
+            "option_b": "Rajasthan",
+            "option_c": "Punjab",
+            "option_d": "Uttar Pradesh",
+            "correct_option": "Punjab"
+        },
+        {
+            "id": "geo_16",
+            "question_text": "The Andaman and Nicobar Islands are separated by which channel?",
+            "option_a": "Palk Strait",
+            "option_b": "Ten Degree Channel",
+            "option_c": "Eight Degree Channel",
+            "option_d": "Duncan Passage",
+            "correct_option": "Ten Degree Channel"
+        },
+        {
+            "id": "geo_17",
+            "question_text": "Which river originates from Amarkantak plateau?",
+            "option_a": "Tapti",
+            "option_b": "Narmada",
+            "option_c": "Mahanadi",
+            "option_d": "Son",
+            "correct_option": "Narmada"
+        },
+        {
+            "id": "geo_18",
+            "question_text": "The phenomenon of 'El Nino' is associated with which ocean?",
+            "option_a": "Atlantic Ocean",
+            "option_b": "Indian Ocean",
+            "option_c": "Pacific Ocean",
+            "option_d": "Southern Ocean",
+            "correct_option": "Pacific Ocean"
+        },
+        {
+            "id": "geo_19",
+            "question_text": "Which is the smallest state of India by area?",
+            "option_a": "Sikkim",
+            "option_b": "Tripura",
+            "option_c": "Goa",
+            "option_d": "Manipur",
+            "correct_option": "Goa"
+        },
+        {
+            "id": "geo_20",
+            "question_text": "The Brahmaputra river is known by which name in China?",
+            "option_a": "Tsangpo",
+            "option_b": "Irrawaddy",
+            "option_c": "Salween",
+            "option_d": "Mekong",
+            "correct_option": "Tsangpo"
+        },
+        {
+    "id": "geo_21",
+    "question_text": "Monsoon Mechanism\nStatement I: The southwest monsoon brings heavy rainfall to the western coast of India.\nStatement II: The Western Ghats cause orographic rainfall by obstructing the moisture-laden winds.",
+    "option_a": "Both Statement I and Statement II are correct and Statement II is the correct explanation for Statement I.",
+    "option_b": "Both Statement I and Statement II are correct but Statement II is not the correct explanation for Statement I.",
+    "option_c": "Statement I is correct but Statement II is incorrect.",
+    "option_d": "Statement I is incorrect but Statement II is correct.",
+    "correct_option": "Both Statement I and Statement II are correct and Statement II is the correct explanation for Statement I."
+},
+{
+    "id": "geo_22",
+    "question_text": "River System\nStatement I: The Narmada River flows westward and drains into the Arabian Sea.\nStatement II: The Narmada flows through a rift valley between the Vindhya and Satpura ranges.",
+    "option_a": "Both Statement I and Statement II are correct and Statement II is the correct explanation for Statement I.",
+    "option_b": "Both Statement I and Statement II are correct but Statement II is not the correct explanation for Statement I.",
+    "option_c": "Statement I is correct but Statement II is incorrect.",
+    "option_d": "Statement I is incorrect but Statement II is correct.",
+    "correct_option": "Both Statement I and Statement II are correct but Statement II is not the correct explanation for Statement I."
+},
+
+{
+    "id": "geo_23",
+    "question_text": "Consider the following statements about the Earth:\n1. The Earth is an oblate spheroid.\n2. The equatorial diameter is greater than the polar diameter.\n3. The Earth rotates from east to west.\nWhich of the statements given above is/are correct?",
+    "option_a": "1 and 2 only",
+    "option_b": "2 and 3 only",
+    "option_c": "1 only",
+    "option_d": "1, 2 and 3",
+    "correct_option": "1 and 2 only"
+},
+{
+    "id": "geo_24",
+    "question_text": "Which of the following layers of the atmosphere contains the ozone layer?",
+    "option_a": "Troposphere",
+    "option_b": "Stratosphere",
+    "option_c": "Mesosphere",
+    "option_d": "Thermosphere",
+    "correct_option": "Stratosphere"
+},
+{
+    "id": "geo_25",
+    "question_text": "Consider the following statements about monsoons in India:\n1. They are seasonal reversal winds.\n2. The southwest monsoon brings rainfall to most parts of India.\n3. The northeast monsoon mainly affects Tamil Nadu.\nWhich of the statements given above is/are correct?",
+    "option_a": "1 and 2 only",
+    "option_b": "2 and 3 only",
+    "option_c": "1, 2 and 3",
+    "option_d": "1 only",
+    "correct_option": "1, 2 and 3"
+},
+{
+    "id": "geo_26",
+    "question_text": "The Tropic of Cancer passes through how many Indian states?",
+    "option_a": "6",
+    "option_b": "7",
+    "option_c": "8",
+    "option_d": "9",
+    "correct_option": "8"
+},
+{
+    "id": "geo_27",
+    "question_text": "Consider the following statements about plate tectonics:\n1. The Earth's lithosphere is divided into plates.\n2. Convergent boundaries can form mountain ranges.\n3. Divergent boundaries lead to subduction zones.\nWhich of the statements given above is/are correct?",
+    "option_a": "1 and 2 only",
+    "option_b": "2 and 3 only",
+    "option_c": "1 only",
+    "option_d": "1, 2 and 3",
+    "correct_option": "1 and 2 only"
+},
+{
+    "id": "geo_28",
+    "question_text": "Which river is known as the 'Sorrow of Bihar'?",
+    "option_a": "Ganga",
+    "option_b": "Kosi",
+    "option_c": "Son",
+    "option_d": "Gandak",
+    "correct_option": "Kosi"
+},
+{
+    "id": "geo_29",
+    "question_text": "Consider the following statements about soil types in India:\n1. Black soil is ideal for cotton cultivation.\n2. Laterite soil is rich in humus.\n3. Alluvial soil is found in river plains.\nWhich of the statements given above is/are correct?",
+    "option_a": "1 and 3 only",
+    "option_b": "2 only",
+    "option_c": "1 only",
+    "option_d": "1, 2 and 3",
+    "correct_option": "1 and 3 only"
+},
+{
+    "id": "geo_30",
+    "question_text": "Which of the following currents is a warm ocean current?",
+    "option_a": "Labrador Current",
+    "option_b": "Canary Current",
+    "option_c": "Gulf Stream",
+    "option_d": "Peru Current",
+    "correct_option": "Gulf Stream"
+},
+{
+    "id": "geo_31",
+    "question_text": "Consider the following statements about cyclones:\n1. They develop over warm ocean waters.\n2. The eye of the cyclone has calm weather.\n3. They cannot form in the Bay of Bengal.\nWhich of the statements given above is/are correct?",
+    "option_a": "1 and 2 only",
+    "option_b": "2 and 3 only",
+    "option_c": "1 only",
+    "option_d": "1, 2 and 3",
+    "correct_option": "1 and 2 only"
+},
+{
+    "id": "geo_32",
+    "question_text": "The highest peak in India is:",
+    "option_a": "Kanchenjunga",
+    "option_b": "Nanda Devi",
+    "option_c": "K2",
+    "option_d": "Kamet",
+    "correct_option": "K2"
+},
+{
+    "id": "geo_33",
+    "question_text": "Which of the following states has the longest coastline in India?",
+    "option_a": "Tamil Nadu",
+    "option_b": "Andhra Pradesh",
+    "option_c": "Gujarat",
+    "option_d": "Maharashtra",
+    "correct_option": "Gujarat"
+},
+{
+    "id": "geo_34",
+    "question_text": "Consider the following statements about El Niño:\n1. It is associated with warming of the Pacific Ocean.\n2. It affects the Indian monsoon.\n3. It leads to increased rainfall in all parts of India.\nWhich of the statements given above is/are correct?",
+    "option_a": "1 and 2 only",
+    "option_b": "2 and 3 only",
+    "option_c": "1 only",
+    "option_d": "1, 2 and 3",
+    "correct_option": "1 and 2 only"
+},
+{
+    "id": "geo_35",
+    "question_text": "The Deccan Plateau is primarily composed of:",
+    "option_a": "Granite rocks",
+    "option_b": "Basalt rocks",
+    "option_c": "Sandstone",
+    "option_d": "Limestone",
+    "correct_option": "Basalt rocks"
+},
+{
+    "id": "geo_36",
+    "question_text": "Which of the following is an example of a rift valley?",
+    "option_a": "Indo-Gangetic Plain",
+    "option_b": "Narmada Valley",
+    "option_c": "Thar Desert",
+    "option_d": "Western Ghats",
+    "correct_option": "Narmada Valley"
+},
+{
+    "id": "geo_37",
+    "question_text": "Consider the following statements about population distribution in India:\n1. Northern plains are densely populated.\n2. Desert regions have low population density.\n3. Mountainous regions generally have high population density.\nWhich of the statements given above is/are correct?",
+    "option_a": "1 and 2 only",
+    "option_b": "2 and 3 only",
+    "option_c": "1 only",
+    "option_d": "1, 2 and 3",
+    "correct_option": "1 and 2 only"
+}
+
+  
+    ],
+    "History": [
+        {
+            "id": "his_1",
+            "question_text": "The 'Montagu-Chelmsford Reforms' formed the basis of which Act?",
+            "option_a": "Government of India Act, 1909",
+            "option_b": "Government of India Act, 1919",
+            "option_c": "Government of India Act, 1935",
+            "option_d": "Indian Independence Act, 1947",
+            "correct_option": "Government of India Act, 1919"
+        },
+        {
+            "id": "his_2",
+            "question_text": "Who was the first Indian to join the Viceroy's Executive Council?",
+            "option_a": "Gopal Krishna Gokhale",
+            "option_b": "Bal Gangadhar Tilak",
+            "option_c": "Satyendra Prasad Sinha",
+            "option_d": "Dadabhai Naoroji",
+            "correct_option": "Satyendra Prasad Sinha"
+        },
+        {
+            "id": "his_3",
+            "question_text": "The Battle of Plassey was fought in which year?",
+            "option_a": "1757",
+            "option_b": "1764",
+            "option_c": "1775",
+            "option_d": "1799",
+            "correct_option": "1757"
+        },
+        {
+            "id": "his_4",
+            "question_text": "Who founded the Indian National Congress in 1885?",
+            "option_a": "Bal Gangadhar Tilak",
+            "option_b": "Dadabhai Naoroji",
+            "option_c": "A.O. Hume",
+            "option_d": "Surendranath Banerjee",
+            "correct_option": "A.O. Hume"
+        },
+        {
+            "id": "his_5",
+            "question_text": "The Dandi March was undertaken by Gandhi in which year?",
+            "option_a": "1928",
+            "option_b": "1929",
+            "option_c": "1930",
+            "option_d": "1931",
+            "correct_option": "1930"
+        },
+        {
+            "id": "his_6",
+            "question_text": "Which Mughal emperor built the Taj Mahal?",
+            "option_a": "Akbar",
+            "option_b": "Jahangir",
+            "option_c": "Shah Jahan",
+            "option_d": "Aurangzeb",
+            "correct_option": "Shah Jahan"
+        },
+        {
+            "id": "his_7",
+            "question_text": "The Quit India Movement was launched in which year?",
+            "option_a": "1940",
+            "option_b": "1941",
+            "option_c": "1942",
+            "option_d": "1943",
+            "correct_option": "1942"
+        },
+        {
+            "id": "his_8",
+            "question_text": "Who gave the slogan 'Do or Die' during the freedom struggle?",
+            "option_a": "Jawaharlal Nehru",
+            "option_b": "Subhas Chandra Bose",
+            "option_c": "Mahatma Gandhi",
+            "option_d": "Bal Gangadhar Tilak",
+            "correct_option": "Mahatma Gandhi"
+        },
+        {
+            "id": "his_9",
+            "question_text": "The Harappan civilization is also known as:",
+            "option_a": "Vedic Civilization",
+            "option_b": "Indus Valley Civilization",
+            "option_c": "Gangetic Civilization",
+            "option_d": "Dravidian Civilization",
+            "correct_option": "Indus Valley Civilization"
+        },
+        {
+            "id": "his_10",
+            "question_text": "Who was the last Viceroy of British India?",
+            "option_a": "Lord Wavell",
+            "option_b": "Lord Mountbatten",
+            "option_c": "Lord Linlithgow",
+            "option_d": "Lord Irwin",
+            "correct_option": "Lord Mountbatten"
+        },
+        {
+            "id": "his_11",
+            "question_text": "The Jallianwala Bagh massacre occurred in which year?",
+            "option_a": "1917",
+            "option_b": "1918",
+            "option_c": "1919",
+            "option_d": "1920",
+            "correct_option": "1919"
+        },
+        {
+            "id": "his_12",
+            "question_text": "Who established the Maurya Empire?",
+            "option_a": "Ashoka",
+            "option_b": "Chandragupta Maurya",
+            "option_c": "Bindusara",
+            "option_d": "Samudragupta",
+            "correct_option": "Chandragupta Maurya"
+        },
+        {
+            "id": "his_13",
+            "question_text": "The Third Battle of Panipat was fought between Marathas and:",
+            "option_a": "Mughals",
+            "option_b": "Afghans (Ahmad Shah Durrani)",
+            "option_c": "British",
+            "option_d": "Sikhs",
+            "correct_option": "Afghans (Ahmad Shah Durrani)"
+        },
+        {
+            "id": "his_14",
+            "question_text": "Who wrote the book 'Discovery of India'?",
+            "option_a": "Mahatma Gandhi",
+            "option_b": "Rabindranath Tagore",
+            "option_c": "Jawaharlal Nehru",
+            "option_d": "B.R. Ambedkar",
+            "correct_option": "Jawaharlal Nehru"
+        },
+        {
+            "id": "his_15",
+            "question_text": "The Champaran Satyagraha of 1917 was related to:",
+            "option_a": "Salt tax",
+            "option_b": "Indigo cultivation",
+            "option_c": "Land revenue",
+            "option_d": "Textile mills",
+            "correct_option": "Indigo cultivation"
+        },
+        {
+            "id": "his_16",
+            "question_text": "Who was the founder of the Sikh religion?",
+            "option_a": "Guru Nanak Dev",
+            "option_b": "Guru Gobind Singh",
+            "option_c": "Guru Arjan Dev",
+            "option_d": "Guru Tegh Bahadur",
+            "correct_option": "Guru Nanak Dev"
+        },
+        {
+            "id": "his_17",
+            "question_text": "The Simon Commission was boycotted because:",
+            "option_a": "It proposed partition of India",
+            "option_b": "It had no Indian member",
+            "option_c": "It abolished the Indian National Congress",
+            "option_d": "It increased taxes",
+            "correct_option": "It had no Indian member"
+        },
+        {
+            "id": "his_18",
+            "question_text": "Which treaty ended the First Anglo-Maratha War?",
+            "option_a": "Treaty of Salbai",
+            "option_b": "Treaty of Purandar",
+            "option_c": "Treaty of Bassein",
+            "option_d": "Treaty of Mangalore",
+            "correct_option": "Treaty of Salbai"
+        },
+        {
+            "id": "his_19",
+            "question_text": "The Indian National Army (INA) was founded by:",
+            "option_a": "Bhagat Singh",
+            "option_b": "Subhas Chandra Bose",
+            "option_c": "Rash Behari Bose",
+            "option_d": "Mohan Singh",
+            "correct_option": "Mohan Singh"
+        },
+        {
+            "id": "his_20",
+            "question_text": "The Partition of Bengal was carried out in which year?",
+            "option_a": "1903",
+            "option_b": "1905",
+            "option_c": "1907",
+            "option_d": "1911",
+            "correct_option": "1905"
+        },
+        
+{
+    "id": "his_21",
+    "question_text": "Consider the following statements about the Indus Valley Civilization:\n1. It had a well-planned drainage system.\n2. Iron was widely used by its people.\n3. It had trade relations with Mesopotamia.\nWhich of the statements given above is/are correct?",
+    "option_a": "1 and 3 only",
+    "option_b": "2 only",
+    "option_c": "1 only",
+    "option_d": "1, 2 and 3",
+    "correct_option": "1 and 3 only"
+},
+{
+    "id": "his_22",
+    "question_text": "Which of the following Vedas contains hymns primarily dedicated to various deities?",
+    "option_a": "Yajurveda",
+    "option_b": "Samaveda",
+    "option_c": "Rigveda",
+    "option_d": "Atharvaveda",
+    "correct_option": "Rigveda"
+},
+{
+    "id": "his_23",
+    "question_text": "Consider the following statements about Emperor Ashoka:\n1. He belonged to the Maurya dynasty.\n2. The Kalinga War led to his conversion to Buddhism.\n3. He issued inscriptions known as Edicts.\nWhich of the statements given above is/are correct?",
+    "option_a": "1 and 2 only",
+    "option_b": "2 and 3 only",
+    "option_c": "1, 2 and 3",
+    "option_d": "1 only",
+    "correct_option": "1, 2 and 3"
+},
+{
+    "id": "his_24",
+    "question_text": "The Gupta period is often referred to as the:",
+    "option_a": "Age of Regional Kingdoms",
+    "option_b": "Golden Age of India",
+    "option_c": "Age of Revolts",
+    "option_d": "Age of Industrialization",
+    "correct_option": "Golden Age of India"
+},
+{
+    "id": "his_25",
+    "question_text": "Consider the following statements about the Delhi Sultanate:\n1. Qutb-ud-din Aibak founded the Slave Dynasty.\n2. Alauddin Khalji introduced market control measures.\n3. Muhammad bin Tughlaq shifted the capital from Delhi to Daulatabad.\nWhich of the statements given above is/are correct?",
+    "option_a": "1 and 2 only",
+    "option_b": "2 and 3 only",
+    "option_c": "1, 2 and 3",
+    "option_d": "1 only",
+    "correct_option": "1, 2 and 3"
+},
+{
+    "id": "his_26",
+    "question_text": "Who founded the Mughal Empire in India?",
+    "option_a": "Akbar",
+    "option_b": "Babur",
+    "option_c": "Humayun",
+    "option_d": "Shah Jahan",
+    "correct_option": "Babur"
+},
+{
+    "id": "his_27",
+    "question_text": "Consider the following statements about the Bhakti Movement:\n1. It emphasized devotion to a personal god.\n2. It opposed caste discrimination.\n3. It was confined only to North India.\nWhich of the statements given above is/are correct?",
+    "option_a": "1 and 2 only",
+    "option_b": "2 and 3 only",
+    "option_c": "1 only",
+    "option_d": "1, 2 and 3",
+    "correct_option": "1 and 2 only"
+},
+{
+    "id": "his_28",
+    "question_text": "The Battle of Plassey was fought in:",
+    "option_a": "1757",
+    "option_b": "1764",
+    "option_c": "1857",
+    "option_d": "1773",
+    "correct_option": "1757"
+},
+{
+    "id": "his_29",
+    "question_text": "Consider the following statements about the Revolt of 1857:\n1. It began at Meerut.\n2. Bahadur Shah Zafar was declared Emperor of India.\n3. It resulted in the end of East India Company rule.\nWhich of the statements given above is/are correct?",
+    "option_a": "1 and 2 only",
+    "option_b": "2 and 3 only",
+    "option_c": "1, 2 and 3",
+    "option_d": "1 only",
+    "correct_option": "1, 2 and 3"
+},
+{
+    "id": "his_30",
+    "question_text": "Who among the following founded the Indian National Congress?",
+    "option_a": "Dadabhai Naoroji",
+    "option_b": "A.O. Hume",
+    "option_c": "Bal Gangadhar Tilak",
+    "option_d": "Mahatma Gandhi",
+    "correct_option": "A.O. Hume"
+},
+{
+    "id": "his_31",
+    "question_text": "The Non-Cooperation Movement was launched in the year:",
+    "option_a": "1919",
+    "option_b": "1920",
+    "option_c": "1930",
+    "option_d": "1942",
+    "correct_option": "1920"
+},
+{
+    "id": "his_32",
+    "question_text": "Consider the following statements about the Civil Disobedience Movement:\n1. It began with the Dandi March.\n2. It involved the violation of salt laws.\n3. It was launched in 1942.\nWhich of the statements given above is/are correct?",
+    "option_a": "1 and 2 only",
+    "option_b": "2 and 3 only",
+    "option_c": "1 only",
+    "option_d": "1, 2 and 3",
+    "correct_option": "1 and 2 only"
+},
+{
+    "id": "his_33",
+    "question_text": "The Quit India Movement was launched in:",
+    "option_a": "1930",
+    "option_b": "1942",
+    "option_c": "1947",
+    "option_d": "1928",
+    "correct_option": "1942"
+},
+{
+    "id": "his_34",
+    "question_text": "Who among the following is associated with the Aligarh Movement?",
+    "option_a": "Sir Syed Ahmad Khan",
+    "option_b": "Raja Ram Mohan Roy",
+    "option_c": "Ishwar Chandra Vidyasagar",
+    "option_d": "Swami Vivekananda",
+    "correct_option": "Sir Syed Ahmad Khan"
+},
+{
+    "id": "his_35",
+    "question_text": "Consider the following statements about the Cabinet Mission Plan:\n1. It was sent to India in 1946.\n2. It proposed the formation of a Constituent Assembly.\n3. It recommended complete partition of India.\nWhich of the statements given above is/are correct?",
+    "option_a": "1 and 2 only",
+    "option_b": "2 and 3 only",
+    "option_c": "1 only",
+    "option_d": "1, 2 and 3",
+    "correct_option": "1 and 2 only"
+}
+
+    ],
+    "Polity": [
+        {
+            "id": "pol_1",
+            "question_text": "Who is the custodian of the Indian Constitution?",
+            "option_a": "President of India",
+            "option_b": "Parliament of India",
+            "option_c": "The Supreme Court of India",
+            "option_d": "Prime Minister of India",
+            "correct_option": "The Supreme Court of India"
+        },
+        {
+            "id": "pol_2",
+            "question_text": "Which article allows Parliament to form new States?",
+            "option_a": "Article 1",
+            "option_b": "Article 2",
+            "option_c": "Article 3",
+            "option_d": "Article 4",
+            "correct_option": "Article 3"
+        },
+        {
+            "id": "pol_3",
+            "question_text": "The Indian Constitution was adopted on:",
+            "option_a": "15 August 1947",
+            "option_b": "26 January 1950",
+            "option_c": "26 November 1949",
+            "option_d": "2 October 1948",
+            "correct_option": "26 November 1949"
+        },
+        {
+            "id": "pol_4",
+            "question_text": "Which article of the Constitution deals with the Right to Equality?",
+            "option_a": "Article 12-18",
+            "option_b": "Article 14-18",
+            "option_c": "Article 19-22",
+            "option_d": "Article 23-24",
+            "correct_option": "Article 14-18"
+        },
+        {
+            "id": "pol_5",
+            "question_text": "The Directive Principles of State Policy are contained in which Part of the Constitution?",
+            "option_a": "Part III",
+            "option_b": "Part IV",
+            "option_c": "Part V",
+            "option_d": "Part VI",
+            "correct_option": "Part IV"
+        },
+        {
+            "id": "pol_6",
+            "question_text": "Who was the Chairman of the Constituent Assembly of India?",
+            "option_a": "Jawaharlal Nehru",
+            "option_b": "B.R. Ambedkar",
+            "option_c": "Rajendra Prasad",
+            "option_d": "Sardar Patel",
+            "correct_option": "Rajendra Prasad"
+        },
+        {
+            "id": "pol_7",
+            "question_text": "The concept of 'Judicial Review' in India is borrowed from which country?",
+            "option_a": "United Kingdom",
+            "option_b": "Canada",
+            "option_c": "USA",
+            "option_d": "Australia",
+            "correct_option": "USA"
+        },
+        {
+            "id": "pol_8",
+            "question_text": "Which schedule of the Constitution contains the list of recognized languages?",
+            "option_a": "6th Schedule",
+            "option_b": "7th Schedule",
+            "option_c": "8th Schedule",
+            "option_d": "9th Schedule",
+            "correct_option": "8th Schedule"
+        },
+        {
+            "id": "pol_9",
+            "question_text": "The 'Right to Education' was added as a Fundamental Right by which amendment?",
+            "option_a": "86th Amendment",
+            "option_b": "91st Amendment",
+            "option_c": "93rd Amendment",
+            "option_d": "97th Amendment",
+            "correct_option": "86th Amendment"
+        },
+        {
+            "id": "pol_10",
+            "question_text": "Which article deals with the 'Right to Constitutional Remedies'?",
+            "option_a": "Article 30",
+            "option_b": "Article 32",
+            "option_c": "Article 35",
+            "option_d": "Article 38",
+            "correct_option": "Article 32"
+        },
+        {
+            "id": "pol_11",
+            "question_text": "The President of India is elected by:",
+            "option_a": "Direct election by citizens",
+            "option_b": "Members of Parliament only",
+            "option_c": "Electoral College (MPs + MLAs)",
+            "option_d": "Members of Rajya Sabha only",
+            "correct_option": "Electoral College (MPs + MLAs)"
+        },
+        {
+            "id": "pol_12",
+            "question_text": "Which writ is issued to release a person from illegal detention?",
+            "option_a": "Mandamus",
+            "option_b": "Certiorari",
+            "option_c": "Habeas Corpus",
+            "option_d": "Quo Warranto",
+            "correct_option": "Habeas Corpus"
+        },
+        {
+            "id": "pol_13",
+            "question_text": "The 'Zero Hour' in Indian Parliament refers to:",
+            "option_a": "Time for private member bills",
+            "option_b": "Time immediately after Question Hour",
+            "option_c": "Midnight session of Parliament",
+            "option_d": "Time for budget presentation",
+            "correct_option": "Time immediately after Question Hour"
+        },
+        {
+            "id": "pol_14",
+            "question_text": "The Preamble of the Indian Constitution was amended by which Amendment Act?",
+            "option_a": "42nd Amendment",
+            "option_b": "44th Amendment",
+            "option_c": "52nd Amendment",
+            "option_d": "61st Amendment",
+            "correct_option": "42nd Amendment"
+        },
+        {
+            "id": "pol_15",
+            "question_text": "Which body is described as the 'Fifth Estate' in India?",
+            "option_a": "Judiciary",
+            "option_b": "Media/Press",
+            "option_c": "Election Commission",
+            "option_d": "CAG",
+            "correct_option": "Media/Press"
+        },
+        {
+            "id": "pol_16",
+            "question_text": "The minimum age to become the Prime Minister of India is:",
+            "option_a": "21 years",
+            "option_b": "25 years",
+            "option_c": "30 years",
+            "option_d": "35 years",
+            "correct_option": "25 years"
+        },
+        {
+            "id": "pol_17",
+            "question_text": "The concept of 'Fundamental Duties' was added by which amendment?",
+            "option_a": "40th Amendment",
+            "option_b": "42nd Amendment",
+            "option_c": "44th Amendment",
+            "option_d": "46th Amendment",
+            "correct_option": "42nd Amendment"
+        },
+        {
+            "id": "pol_18",
+            "question_text": "Which article provides for the formation of the Finance Commission?",
+            "option_a": "Article 270",
+            "option_b": "Article 280",
+            "option_c": "Article 290",
+            "option_d": "Article 300",
+            "correct_option": "Article 280"
+        },
+        {
+            "id": "pol_19",
+            "question_text": "The Rajya Sabha is a permanent body because:",
+            "option_a": "Its members are elected for life",
+            "option_b": "It is never dissolved",
+            "option_c": "The President is its chairman",
+            "option_d": "It has more members than Lok Sabha",
+            "correct_option": "It is never dissolved"
+        },
+        {
+            "id": "pol_20",
+            "question_text": "Which article of the Constitution abolishes untouchability?",
+            "option_a": "Article 14",
+            "option_b": "Article 15",
+            "option_c": "Article 17",
+            "option_d": "Article 18",
+            "correct_option": "Article 17"
+        },
+        {
+    "id": "pol_21",
+    "question_text": "Consider the following statements about the Indian Parliament:\n1. The Rajya Sabha is a permanent House.\n2. The members of the Rajya Sabha are directly elected by the people.\n3. One-third of the members of the Rajya Sabha retire every two years.\nWhich of the statements given above is/are correct?",
+    "option_a": "1 and 3 only",
+    "option_b": "1 only",
+    "option_c": "2 and 3 only",
+    "option_d": "1, 2 and 3",
+    "correct_option": "1 and 3 only"
+        },
+        {
+    "id": "pol_22",
+    "question_text": "Consider the following statements regarding the Preamble of the Indian Constitution:\n1. It is a part of the Constitution.\n2. It can be amended under Article 368.\n3. It grants enforceable rights to citizens.\nWhich of the statements given above is/are correct?",
+    "option_a": "1 and 2 only",
+    "option_b": "2 and 3 only",
+    "option_c": "1 only",
+    "option_d": "1, 2 and 3",
+    "correct_option": "1 and 2 only"
+        }  ,
+        {
+    "id": "pol_23",
+    "question_text": "Consider the following statements about Fundamental Rights:\n1. They are justiciable.\n2. They are borrowed from the British Constitution.\n3. They are contained in Part III of the Constitution.\nWhich of the statements given above is/are correct?",
+    "option_a": "1 and 3 only",
+    "option_b": "2 only",
+    "option_c": "1, 2 and 3",
+    "option_d": "3 only",
+    "correct_option": "1 and 3 only"
+        },
+      
+       {
+    "id": "pol_24",
+    "question_text": "Which of the following writs is issued to produce a person before the court?",
+    "option_a": "Mandamus",
+    "option_b": "Certiorari",
+    "option_c": "Habeas Corpus",
+    "option_d": "Quo Warranto",
+    "correct_option": "Habeas Corpus"
+} ,
+  {
+    "id": "pol_25",
+    "question_text": "Consider the following statements about Directive Principles of State Policy:\n1. They are non-justiciable.\n2. They are contained in Part IV.\n3. They are enforceable by courts.\nWhich of the statements given above is/are correct?",
+    "option_a": "1 and 2 only",
+    "option_b": "2 and 3 only",
+    "option_c": "1 only",
+    "option_d": "1, 2 and 3",
+    "correct_option": "1 and 2 only"
+       }  ,
+       {
+    "id": "pol_26",
+    "question_text": "Who appoints the Prime Minister of India?",
+    "option_a": "Chief Justice of India",
+    "option_b": "President of India",
+    "option_c": "Speaker of Lok Sabha",
+    "option_d": "Attorney General",
+    "correct_option": "President of India"
+},
+{
+    "id": "pol_27",
+    "question_text": "Consider the following statements about the President of India:\n1. The President is elected indirectly.\n2. The President holds office for five years.\n3. The President can be removed by impeachment.\nWhich of the statements given above is/are correct?",
+    "option_a": "1 and 2 only",
+    "option_b": "2 and 3 only",
+    "option_c": "1, 2 and 3",
+    "option_d": "1 only",
+    "correct_option": "1, 2 and 3"
+},
+{
+    "id": "pol_28",
+    "question_text": "Money Bills can be introduced only in the:",
+    "option_a": "Rajya Sabha",
+    "option_b": "Lok Sabha",
+    "option_c": "Either House",
+    "option_d": "Joint Sitting",
+    "correct_option": "Lok Sabha"
+},
+{
+    "id": "pol_29",
+    "question_text": "The Attorney General of India is appointed by the:",
+    "option_a": "Prime Minister",
+    "option_b": "Chief Justice of India",
+    "option_c": "President of India",
+    "option_d": "Parliament",
+    "correct_option": "President of India"
+},
+{
+    "id": "pol_30",
+    "question_text": "Consider the following statements about the Supreme Court of India:\n1. It is the highest court of appeal.\n2. It has original jurisdiction in Centre-State disputes.\n3. It cannot review its own judgments.\nWhich of the statements given above is/are correct?",
+    "option_a": "1 and 2 only",
+    "option_b": "2 and 3 only",
+    "option_c": "1 only",
+    "option_d": "1, 2 and 3",
+    "correct_option": "1 and 2 only"
+},
+{
+    "id": "pol_31",
+    "question_text": "Which Article deals with the amendment of the Constitution?",
+    "option_a": "Article 356",
+    "option_b": "Article 368",
+    "option_c": "Article 370",
+    "option_d": "Article 32",
+    "correct_option": "Article 368"
+},
+{
+    "id": "pol_32",
+    "question_text": "Consider the following statements about the Governor:\n1. The Governor is appointed by the President.\n2. The Governor holds office during the pleasure of the President.\n3. The Governor is elected by the State Legislature.\nWhich of the statements given above is/are correct?",
+    "option_a": "1 and 2 only",
+    "option_b": "2 and 3 only",
+    "option_c": "1 only",
+    "option_d": "1, 2 and 3",
+    "correct_option": "1 and 2 only"
+},
+{
+    "id": "pol_33",
+    "question_text": "The Finance Commission is constituted under which Article?",
+    "option_a": "Article 280",
+    "option_b": "Article 356",
+    "option_c": "Article 368",
+    "option_d": "Article 370",
+    "correct_option": "Article 280"
+},
+{
+    "id": "pol_34",
+    "question_text": "Which Schedule deals with Anti-Defection provisions?",
+    "option_a": "Eighth Schedule",
+    "option_b": "Tenth Schedule",
+    "option_c": "Seventh Schedule",
+    "option_d": "Ninth Schedule",
+    "correct_option": "Tenth Schedule"
+},
+{
+    "id": "pol_35",
+    "question_text": "Consider the following statements about the Election Commission of India:\n1. It is a constitutional body.\n2. It conducts elections to Parliament and State Legislatures.\n3. It is mentioned in Article 324.\nWhich of the statements given above is/are correct?",
+    "option_a": "1 and 2 only",
+    "option_b": "2 and 3 only",
+    "option_c": "1, 2 and 3",
+    "option_d": "1 only",
+    "correct_option": "1, 2 and 3"
+},
+{
+    "id": "pol_36",
+    "question_text": "The Vice-President of India is the ex-officio Chairman of the:",
+    "option_a": "Lok Sabha",
+    "option_b": "Rajya Sabha",
+    "option_c": "Supreme Court",
+    "option_d": "Finance Commission",
+    "correct_option": "Rajya Sabha"
+},
+{
+    "id": "pol_37",
+    "question_text": "Which Part of the Constitution deals with Fundamental Duties?",
+    "option_a": "Part III",
+    "option_b": "Part IV",
+    "option_c": "Part IVA",
+    "option_d": "Part V",
+    "correct_option": "Part IVA"
+},
+{
+    "id": "pol_38",
+    "question_text": "The Comptroller and Auditor General (CAG) is appointed by the:",
+    "option_a": "Prime Minister",
+    "option_b": "President",
+    "option_c": "Parliament",
+    "option_d": "Chief Justice of India",
+    "correct_option": "President"
+},
+{
+    "id": "pol_39",
+    "question_text": "Consider the following statements about the Lok Sabha:\n1. It has a maximum strength of 552 members.\n2. It is subject to dissolution.\n3. Its normal tenure is five years.\nWhich of the statements given above is/are correct?",
+    "option_a": "1 and 2 only",
+    "option_b": "2 and 3 only",
+    "option_c": "1, 2 and 3",
+    "option_d": "1 only",
+    "correct_option": "1, 2 and 3"
+},
+{
+    "id": "pol_40",
+    "question_text": "Which emergency is declared under Article 352?",
+    "option_a": "National Emergency",
+    "option_b": "State Emergency",
+    "option_c": "Financial Emergency",
+    "option_d": "Judicial Emergency",
+    "correct_option": "National Emergency"
+}
+    ],
+    "Economics": [
+        {
+            "id": "eco_1",
+            "question_text": "Who is the Chairman of the GST Council?",
+            "option_a": "Prime Minister of India",
+            "option_b": "RBI Governor",
+            "option_c": "Union Finance Minister",
+            "option_d": "NITI Aayog Chairman",
+            "correct_option": "Union Finance Minister"
+        },
+        {
+            "id": "eco_2",
+            "question_text": "What is the 'Narrow Money' in Indian Economy?",
+            "option_a": "M0 (Reserve Money)",
+            "option_b": "M1 (Currency + Demand Deposits)",
+            "option_c": "M2 (M1 + Savings Deposits)",
+            "option_d": "M3 (Broad Money)",
+            "correct_option": "M1 (Currency + Demand Deposits)"
+        },
+        {
+            "id": "eco_3",
+            "question_text": "The 'Green Revolution' in India is associated with which crop?",
+            "option_a": "Rice",
+            "option_b": "Wheat",
+            "option_c": "Maize",
+            "option_d": "Sugarcane",
+            "correct_option": "Wheat"
+        },
+        {
+            "id": "eco_4",
+            "question_text": "Which Five Year Plan introduced the concept of 'Garibi Hatao'?",
+            "option_a": "Third Five Year Plan",
+            "option_b": "Fourth Five Year Plan",
+            "option_c": "Fifth Five Year Plan",
+            "option_d": "Sixth Five Year Plan",
+            "correct_option": "Fifth Five Year Plan"
+        },
+        {
+            "id": "eco_5",
+            "question_text": "The Headquarters of the World Trade Organization (WTO) is located in:",
+            "option_a": "New York",
+            "option_b": "Washington D.C.",
+            "option_c": "Geneva",
+            "option_d": "Brussels",
+            "correct_option": "Geneva"
+        },
+        {
+            "id": "eco_6",
+            "question_text": "Which index measures the cost of living for urban consumers?",
+            "option_a": "WPI (Wholesale Price Index)",
+            "option_b": "CPI (Consumer Price Index)",
+            "option_c": "GDP Deflator",
+            "option_d": "PPI (Producer Price Index)",
+            "correct_option": "CPI (Consumer Price Index)"
+        },
+        {
+            "id": "eco_7",
+            "question_text": "The NITI Aayog replaced which body in 2015?",
+            "option_a": "Finance Commission",
+            "option_b": "Planning Commission",
+            "option_c": "National Development Council",
+            "option_d": "Economic Advisory Council",
+            "correct_option": "Planning Commission"
+        },
+        {
+            "id": "eco_8",
+            "question_text": "What does 'Fiscal Deficit' mean?",
+            "option_a": "Excess of imports over exports",
+            "option_b": "Excess of government expenditure over revenue",
+            "option_c": "Excess of revenue over expenditure",
+            "option_d": "Difference between GDP and GNP",
+            "correct_option": "Excess of government expenditure over revenue"
+        },
+        {
+            "id": "eco_9",
+            "question_text": "The 'Laffer Curve' is associated with which concept?",
+            "option_a": "Inflation and unemployment",
+            "option_b": "Tax rates and tax revenue",
+            "option_c": "Supply and demand",
+            "option_d": "Interest rates and investment",
+            "correct_option": "Tax rates and tax revenue"
+        },
+        {
+            "id": "eco_10",
+            "question_text": "Which sector contributes the most to India's GDP?",
+            "option_a": "Agriculture",
+            "option_b": "Industry",
+            "option_c": "Services",
+            "option_d": "Manufacturing",
+            "correct_option": "Services"
+        },
+        {
+            "id": "eco_11",
+            "question_text": "The 'Repo Rate' is the rate at which:",
+            "option_a": "Banks lend to each other",
+            "option_b": "RBI lends to commercial banks",
+            "option_c": "Commercial banks lend to customers",
+            "option_d": "Government borrows from RBI",
+            "correct_option": "RBI lends to commercial banks"
+        },
+        {
+            "id": "eco_12",
+            "question_text": "Which organization publishes the 'Human Development Report'?",
+            "option_a": "World Bank",
+            "option_b": "IMF",
+            "option_c": "UNDP",
+            "option_d": "WHO",
+            "correct_option": "UNDP"
+        },
+        {
+            "id": "eco_13",
+            "question_text": "The 'Gini Coefficient' measures:",
+            "option_a": "Economic growth rate",
+            "option_b": "Income inequality",
+            "option_c": "Inflation rate",
+            "option_d": "Poverty level",
+            "correct_option": "Income inequality"
+        },
+        {
+            "id": "eco_14",
+            "question_text": "Which bank is known as the 'Banker's Bank' in India?",
+            "option_a": "State Bank of India",
+            "option_b": "Reserve Bank of India",
+            "option_c": "NABARD",
+            "option_d": "SIDBI",
+            "correct_option": "Reserve Bank of India"
+        },
+        {
+            "id": "eco_15",
+            "question_text": "The 'Phillips Curve' shows the relationship between:",
+            "option_a": "Savings and investment",
+            "option_b": "Inflation and unemployment",
+            "option_c": "Exports and imports",
+            "option_d": "Money supply and interest rates",
+            "correct_option": "Inflation and unemployment"
+        },
+        {
+            "id": "eco_16",
+            "question_text": "Which committee recommended the abolition of the Planning Commission?",
+            "option_a": "Rangarajan Committee",
+            "option_b": "Kelkar Committee",
+            "option_c": "No specific committee; it was a political decision",
+            "option_d": "Narasimham Committee",
+            "correct_option": "No specific committee; it was a political decision"
+        },
+        {
+            "id": "eco_17",
+            "question_text": "The 'Make in India' initiative was launched in which year?",
+            "option_a": "2013",
+            "option_b": "2014",
+            "option_c": "2015",
+            "option_d": "2016",
+            "correct_option": "2014"
+        },
+        {
+            "id": "eco_18",
+            "question_text": "What is 'Stagflation'?",
+            "option_a": "High growth with low inflation",
+            "option_b": "High inflation with economic stagnation",
+            "option_c": "Low inflation with high unemployment",
+            "option_d": "Rapid economic growth",
+            "correct_option": "High inflation with economic stagnation"
+        },
+        {
+            "id": "eco_19",
+            "question_text": "The 'Pradhan Mantri Jan Dhan Yojana' aims at:",
+            "option_a": "Providing housing to poor",
+            "option_b": "Financial inclusion",
+            "option_c": "Skill development",
+            "option_d": "Agricultural support",
+            "correct_option": "Financial inclusion"
+        },
+        {
+            "id": "eco_20",
+            "question_text": "Which body regulates the capital market in India?",
+            "option_a": "RBI",
+            "option_b": "SEBI",
+            "option_c": "IRDA",
+            "option_d": "PFRDA",
+            "correct_option": "SEBI"
+        },
+        
+{
+    "id": "eco_21",
+    "question_text": "Consider the following statements about GDP:\n1. GDP measures the total value of final goods and services produced within a country.\n2. GDP includes intermediate goods.\n3. GDP can be calculated using the income method.\nWhich of the statements given above is/are correct?",
+    "option_a": "1 and 3 only",
+    "option_b": "1 only",
+    "option_c": "2 and 3 only",
+    "option_d": "1, 2 and 3",
+    "correct_option": "1 and 3 only"
+},
+{
+    "id": "eco_22",
+    "question_text": "Which of the following is a tool of monetary policy?",
+    "option_a": "Taxation",
+    "option_b": "Public expenditure",
+    "option_c": "Repo rate",
+    "option_d": "Subsidies",
+    "correct_option": "Repo rate"
+},
+{
+    "id": "eco_23",
+    "question_text": "Consider the following statements about inflation:\n1. Demand-pull inflation is caused by excess demand.\n2. Cost-push inflation is caused by increase in production costs.\n3. Deflation refers to a continuous rise in prices.\nWhich of the statements given above is/are correct?",
+    "option_a": "1 and 2 only",
+    "option_b": "2 and 3 only",
+    "option_c": "1 only",
+    "option_d": "1, 2 and 3",
+    "correct_option": "1 and 2 only"
+},
+{
+    "id": "eco_24",
+    "question_text": "The authority responsible for issuing currency notes in India is:",
+    "option_a": "Ministry of Finance",
+    "option_b": "Reserve Bank of India",
+    "option_c": "SEBI",
+    "option_d": "NABARD",
+    "correct_option": "Reserve Bank of India"
+},
+{
+    "id": "eco_25",
+    "question_text": "Which of the following is included in fiscal policy?",
+    "option_a": "Bank rate",
+    "option_b": "Open market operations",
+    "option_c": "Government borrowing",
+    "option_d": "Repo rate",
+    "correct_option": "Government borrowing"
+},
+{
+    "id": "eco_26",
+    "question_text": "Consider the following statements about the Balance of Payments (BoP):\n1. It records all economic transactions between residents and the rest of the world.\n2. It includes current account and capital account.\n3. Trade surplus occurs when imports exceed exports.\nWhich of the statements given above is/are correct?",
+    "option_a": "1 and 2 only",
+    "option_b": "2 and 3 only",
+    "option_c": "1 only",
+    "option_d": "1, 2 and 3",
+    "correct_option": "1 and 2 only"
+},
+{
+    "id": "eco_27",
+    "question_text": "The term 'stagflation' refers to:",
+    "option_a": "High growth with low inflation",
+    "option_b": "High inflation with high unemployment",
+    "option_c": "Low inflation with high employment",
+    "option_d": "Negative inflation with growth",
+    "correct_option": "High inflation with high unemployment"
+},
+{
+    "id": "eco_28",
+    "question_text": "Which organization regulates the securities market in India?",
+    "option_a": "RBI",
+    "option_b": "SEBI",
+    "option_c": "IRDAI",
+    "option_d": "NABARD",
+    "correct_option": "SEBI"
+},
+{
+    "id": "eco_29",
+    "question_text": "Consider the following statements about poverty line in India:\n1. It is estimated by NITI Aayog.\n2. It is based on consumption expenditure.\n3. It differs between rural and urban areas.\nWhich of the statements given above is/are correct?",
+    "option_a": "2 and 3 only",
+    "option_b": "1 and 2 only",
+    "option_c": "1 and 3 only",
+    "option_d": "1, 2 and 3",
+    "correct_option": "2 and 3 only"
+},
+{
+    "id": "eco_30",
+    "question_text": "Which of the following is a direct tax?",
+    "option_a": "GST",
+    "option_b": "Excise duty",
+    "option_c": "Income tax",
+    "option_d": "Customs duty",
+    "correct_option": "Income tax"
+},
+{
+    "id": "eco_31",
+    "question_text": "The primary objective of monetary policy is to:",
+    "option_a": "Increase exports",
+    "option_b": "Control inflation",
+    "option_c": "Increase government revenue",
+    "option_d": "Reduce fiscal deficit",
+    "correct_option": "Control inflation"
+},
+{
+    "id": "eco_32",
+    "question_text": "Which of the following is a component of Gross Domestic Product (Expenditure Method)?",
+    "option_a": "Consumption",
+    "option_b": "Savings only",
+    "option_c": "Taxes only",
+    "option_d": "Subsidies only",
+    "correct_option": "Consumption"
+},
+{
+    "id": "eco_33",
+    "question_text": "Consider the following statements about CRR:\n1. It is maintained with RBI.\n2. It affects liquidity in the economy.\n3. It is decided by SEBI.\nWhich of the statements given above is/are correct?",
+    "option_a": "1 and 2 only",
+    "option_b": "2 and 3 only",
+    "option_c": "1 only",
+    "option_d": "1, 2 and 3",
+    "correct_option": "1 and 2 only"
+},
+{
+    "id": "eco_34",
+    "question_text": "Which of the following indicates economic development better than GDP?",
+    "option_a": "Per capita income",
+    "option_b": "Wholesale Price Index",
+    "option_c": "Repo rate",
+    "option_d": "Fiscal deficit",
+    "correct_option": "Per capita income"
+},
+{
+    "id": "eco_35",
+    "question_text": "The headquarters of the World Bank is located in:",
+    "option_a": "New York",
+    "option_b": "Washington, D.C.",
+    "option_c": "London",
+    "option_d": "Paris",
+    "correct_option": "Washington, D.C."
+}
+
+    ],
+    "Science": [
+        {
+            "id": "sci_1",
+            "question_text": "What is the phenomenon of 'Ocean Acidification' caused by?",
+            "option_a": "Excess Nitrogen absorption",
+            "option_b": "Excess Carbon Dioxide (CO2) absorption",
+            "option_c": "Excess Methane absorption",
+            "option_d": "Excess Sulfur Dioxide absorption",
+            "correct_option": "Excess Carbon Dioxide (CO2) absorption"
+        },
+        {
+            "id": "sci_2",
+            "question_text": "Which gas is primarily responsible for the Greenhouse Effect?",
+            "option_a": "Oxygen",
+            "option_b": "Nitrogen",
+            "option_c": "Carbon Dioxide",
+            "option_d": "Argon",
+            "correct_option": "Carbon Dioxide"
+        },
+        {
+            "id": "sci_3",
+            "question_text": "The 'Ozone Layer' is found in which layer of the atmosphere?",
+            "option_a": "Troposphere",
+            "option_b": "Stratosphere",
+            "option_c": "Mesosphere",
+            "option_d": "Thermosphere",
+            "correct_option": "Stratosphere"
+        },
+        {
+            "id": "sci_4",
+            "question_text": "Which vitamin is produced by the human body when exposed to sunlight?",
+            "option_a": "Vitamin A",
+            "option_b": "Vitamin B12",
+            "option_c": "Vitamin C",
+            "option_d": "Vitamin D",
+            "correct_option": "Vitamin D"
+        },
+        {
+            "id": "sci_5",
+            "question_text": "The unit of electric current is:",
+            "option_a": "Volt",
+            "option_b": "Watt",
+            "option_c": "Ampere",
+            "option_d": "Ohm",
+            "correct_option": "Ampere"
+        },
+        {
+            "id": "sci_6",
+            "question_text": "DNA stands for:",
+            "option_a": "Deoxyribonucleic Acid",
+            "option_b": "Dinitrogen Acid",
+            "option_c": "Dynamic Nucleic Acid",
+            "option_d": "Deoxyribose Nitrogen Acid",
+            "correct_option": "Deoxyribonucleic Acid"
+        },
+        {
+            "id": "sci_7",
+            "question_text": "Which planet is known as the 'Red Planet'?",
+            "option_a": "Venus",
+            "option_b": "Jupiter",
+            "option_c": "Mars",
+            "option_d": "Saturn",
+            "correct_option": "Mars"
+        },
+        {
+            "id": "sci_8",
+            "question_text": "The speed of light in vacuum is approximately:",
+            "option_a": "3 × 10^6 m/s",
+            "option_b": "3 × 10^8 m/s",
+            "option_c": "3 × 10^10 m/s",
+            "option_d": "3 × 10^12 m/s",
+            "correct_option": "3 × 10^8 m/s"
+        },
+        {
+            "id": "sci_9",
+            "question_text": "Which element has the chemical symbol 'Fe'?",
+            "option_a": "Fluorine",
+            "option_b": "Francium",
+            "option_c": "Iron",
+            "option_d": "Fermium",
+            "correct_option": "Iron"
+        },
+        {
+            "id": "sci_10",
+            "question_text": "The process by which plants make food using sunlight is called:",
+            "option_a": "Respiration",
+            "option_b": "Transpiration",
+            "option_c": "Photosynthesis",
+            "option_d": "Fermentation",
+            "correct_option": "Photosynthesis"
+        },
+        {
+            "id": "sci_11",
+            "question_text": "Which organ in the human body produces insulin?",
+            "option_a": "Liver",
+            "option_b": "Kidney",
+            "option_c": "Pancreas",
+            "option_d": "Spleen",
+            "correct_option": "Pancreas"
+        },
+        {
+            "id": "sci_12",
+            "question_text": "What is the atomic number of Carbon?",
+            "option_a": "4",
+            "option_b": "6",
+            "option_c": "8",
+            "option_d": "12",
+            "correct_option": "6"
+        },
+        {
+            "id": "sci_13",
+            "question_text": "Which law states that 'For every action, there is an equal and opposite reaction'?",
+            "option_a": "Newton's First Law",
+            "option_b": "Newton's Second Law",
+            "option_c": "Newton's Third Law",
+            "option_d": "Law of Conservation of Energy",
+            "correct_option": "Newton's Third Law"
+        },
+        {
+            "id": "sci_14",
+            "question_text": "The 'Big Bang Theory' explains the origin of:",
+            "option_a": "Life on Earth",
+            "option_b": "The Solar System",
+            "option_c": "The Universe",
+            "option_d": "Black Holes",
+            "correct_option": "The Universe"
+        },
+        {
+            "id": "sci_15",
+            "question_text": "Which blood group is known as the 'Universal Donor'?",
+            "option_a": "A",
+            "option_b": "B",
+            "option_c": "AB",
+            "option_d": "O",
+            "correct_option": "O"
+        },
+        {
+            "id": "sci_16",
+            "question_text": "The 'Doppler Effect' is related to:",
+            "option_a": "Change in frequency due to relative motion",
+            "option_b": "Change in amplitude of sound",
+            "option_c": "Reflection of light",
+            "option_d": "Refraction of waves",
+            "correct_option": "Change in frequency due to relative motion"
+        },
+        {
+            "id": "sci_17",
+            "question_text": "Which gas is used in fire extinguishers?",
+            "option_a": "Oxygen",
+            "option_b": "Nitrogen",
+            "option_c": "Carbon Dioxide",
+            "option_d": "Helium",
+            "correct_option": "Carbon Dioxide"
+        },
+        {
+            "id": "sci_18",
+            "question_text": "The 'ISRO' stands for:",
+            "option_a": "Indian Space Research Organization",
+            "option_b": "Indian Scientific Research Organization",
+            "option_c": "International Space Research Organization",
+            "option_d": "Indian Satellite Research Organization",
+            "correct_option": "Indian Space Research Organization"
+        },
+        {
+            "id": "sci_19",
+            "question_text": "Which part of the human eye controls the amount of light entering?",
+            "option_a": "Cornea",
+            "option_b": "Retina",
+            "option_c": "Iris",
+            "option_d": "Lens",
+            "correct_option": "Iris"
+        },
+        {
+            "id": "sci_20",
+            "question_text": "The 'Chandrayaan-3' mission successfully landed on which part of the Moon?",
+            "option_a": "North Pole",
+            "option_b": "Equatorial region",
+            "option_c": "South Pole region",
+            "option_d": "Far side of the Moon",
+            "correct_option": "South Pole region"
+        },
+        
+{
+    "id": "sci_21",
+    "question_text": "Consider the following statements about CRISPR-Cas9 technology:\n1. It is used for gene editing.\n2. It can be used to treat genetic disorders.\n3. It is a type of vaccine.\nWhich of the statements given above is/are correct?",
+    "option_a": "1 and 2 only",
+    "option_b": "2 and 3 only",
+    "option_c": "1 only",
+    "option_d": "1, 2 and 3",
+    "correct_option": "1 and 2 only"
+},
+{
+    "id": "sci_22",
+    "question_text": "Which of the following organizations is responsible for India's civilian space programme?",
+    "option_a": "DRDO",
+    "option_b": "ISRO",
+    "option_c": "BARC",
+    "option_d": "HAL",
+    "correct_option": "ISRO"
+},
+{
+    "id": "sci_23",
+    "question_text": "Consider the following statements about Quantum Computing:\n1. It uses qubits instead of classical bits.\n2. It can solve certain problems faster than classical computers.\n3. It completely replaces classical computers today.\nWhich of the statements given above is/are correct?",
+    "option_a": "1 and 2 only",
+    "option_b": "2 and 3 only",
+    "option_c": "1 only",
+    "option_d": "1, 2 and 3",
+    "correct_option": "1 and 2 only"
+},
+{
+    "id": "sci_24",
+    "question_text": "The term 'Green Hydrogen' refers to hydrogen produced using:",
+    "option_a": "Coal gasification",
+    "option_b": "Electrolysis powered by renewable energy",
+    "option_c": "Natural gas reforming",
+    "option_d": "Petroleum refining",
+    "correct_option": "Electrolysis powered by renewable energy"
+},
+{
+    "id": "sci_25",
+    "question_text": "Consider the following statements about Artificial Intelligence (AI):\n1. AI systems can learn from data.\n2. Machine Learning is a subset of AI.\n3. AI is limited only to robotics.\nWhich of the statements given above is/are correct?",
+    "option_a": "1 and 2 only",
+    "option_b": "2 and 3 only",
+    "option_c": "1 only",
+    "option_d": "1, 2 and 3",
+    "correct_option": "1 and 2 only"
+},
+{
+    "id": "sci_26",
+    "question_text": "Which of the following diseases is caused by a virus?",
+    "option_a": "Tuberculosis",
+    "option_b": "Malaria",
+    "option_c": "COVID-19",
+    "option_d": "Typhoid",
+    "correct_option": "COVID-19"
+},
+{
+    "id": "sci_27",
+    "question_text": "Consider the following statements about 5G technology:\n1. It offers lower latency than 4G.\n2. It supports Internet of Things (IoT) devices.\n3. It uses only wired communication.\nWhich of the statements given above is/are correct?",
+    "option_a": "1 and 2 only",
+    "option_b": "2 and 3 only",
+    "option_c": "1 only",
+    "option_d": "1, 2 and 3",
+    "correct_option": "1 and 2 only"
+},
+{
+    "id": "sci_28",
+    "question_text": "Which of the following is a renewable source of energy?",
+    "option_a": "Coal",
+    "option_b": "Petroleum",
+    "option_c": "Solar energy",
+    "option_d": "Natural gas",
+    "correct_option": "Solar energy"
+},
+{
+    "id": "sci_29",
+    "question_text": "Consider the following statements about mRNA vaccines:\n1. They use messenger RNA to produce immune response.\n2. They alter the DNA of human cells permanently.\n3. They were used in COVID-19 vaccines.\nWhich of the statements given above is/are correct?",
+    "option_a": "1 and 3 only",
+    "option_b": "2 only",
+    "option_c": "1 only",
+    "option_d": "1, 2 and 3",
+    "correct_option": "1 and 3 only"
+},
+{
+    "id": "sci_30",
+    "question_text": "The term 'Carbon Capture and Storage (CCS)' is associated with:",
+    "option_a": "Capturing carbon dioxide emissions",
+    "option_b": "Storing solar energy",
+    "option_c": "Producing biofuels",
+    "option_d": "Recycling plastic waste",
+    "correct_option": "Capturing carbon dioxide emissions"
+},
+{
+    "id": "sci_31",
+    "question_text": "Which Indian mission successfully landed near the south pole of the Moon?",
+    "option_a": "Chandrayaan-1",
+    "option_b": "Chandrayaan-2",
+    "option_c": "Chandrayaan-3",
+    "option_d": "Mangalyaan",
+    "correct_option": "Chandrayaan-3"
+},
+{
+    "id": "sci_32",
+    "question_text": "Consider the following statements about Biotechnology:\n1. It involves the use of living organisms in industrial processes.\n2. It includes genetic engineering.\n3. It is limited only to agriculture.\nWhich of the statements given above is/are correct?",
+    "option_a": "1 and 2 only",
+    "option_b": "2 and 3 only",
+    "option_c": "1 only",
+    "option_d": "1, 2 and 3",
+    "correct_option": "1 and 2 only"
+},
+{
+    "id": "sci_33",
+    "question_text": "Which of the following is an example of nanotechnology application?",
+    "option_a": "Large dams",
+    "option_b": "Microchips",
+    "option_c": "Satellites",
+    "option_d": "Coal mining",
+    "correct_option": "Microchips"
+},
+{
+    "id": "sci_34",
+    "question_text": "The term 'Blue Economy' mainly relates to:",
+    "option_a": "Space exploration",
+    "option_b": "Ocean-based economic activities",
+    "option_c": "Cyber security",
+    "option_d": "Agricultural production",
+    "correct_option": "Ocean-based economic activities"
+},
+{
+    "id": "sci_35",
+    "question_text": "Consider the following statements about Nuclear Fusion:\n1. It is the process that powers the Sun.\n2. It produces less radioactive waste than nuclear fission.\n3. It is currently used commercially for power generation worldwide.\nWhich of the statements given above is/are correct?",
+    "option_a": "1 and 2 only",
+    "option_b": "2 and 3 only",
+    "option_c": "1 only",
+    "option_d": "1, 2 and 3",
+    "correct_option": "1 and 2 only"
+}
+
+        
+    ]
+}

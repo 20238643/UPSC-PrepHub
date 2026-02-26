@@ -1,0 +1,217 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>UPSC Flip & Learn | Elite Edition</title>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;600;800&family=Playfair+Display:ital,wght@0,700;1,700&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --navy: #0f172a;
+            --royal: #1e3a8a;
+            --gold: #f59e0b;
+            --white: #ffffff;
+        }
+
+        body {
+            font-family: 'Plus Jakarta Sans', sans-serif;
+            background: radial-gradient(circle at top right, #1e293b, var(--navy));
+            margin: 0;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+            color: var(--white);
+            overflow: hidden;
+        }
+
+        /* Animated Heading */
+        .header-container {
+            text-align: center;
+            margin-bottom: 40px;
+        }
+
+        .main-heading {
+            font-family: 'Playfair Display', serif;
+            font-size: 3.5rem;
+            margin: 0;
+            background: linear-gradient(to bottom, #ffffff 30%, var(--gold) 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            letter-spacing: -1px;
+        }
+
+        .sub-heading {
+            font-size: 0.9rem;
+            letter-spacing: 4px;
+            text-transform: uppercase;
+            color: var(--gold);
+            opacity: 0.8;
+            margin-top: 5px;
+        }
+
+        /* Card Setup */
+        .deck {
+            width: 380px;
+            height: 500px;
+            perspective: 2000px;
+        }
+
+        .card-inner {
+            position: relative;
+            width: 100%;
+            height: 100%;
+            transition: transform 0.7s cubic-bezier(0.4, 0, 0.2, 1);
+            transform-style: preserve-3d;
+            cursor: pointer;
+        }
+
+        .is-flipped { transform: rotateY(180deg); }
+
+        .face {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            backface-visibility: hidden;
+            border-radius: 40px;
+            padding: 40px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            box-sizing: border-box;
+            box-shadow: 0 30px 60px rgba(0,0,0,0.4);
+            border: 1px solid rgba(255,255,255,0.1);
+        }
+
+        .front {
+            background: linear-gradient(135deg, var(--royal), var(--navy));
+        }
+
+        .back {
+            background: var(--white);
+            color: var(--navy);
+            transform: rotateY(180deg);
+        }
+
+        .tag {
+            font-weight: 800;
+            color: var(--gold);
+            font-size: 0.7rem;
+            letter-spacing: 2px;
+            margin-bottom: 20px;
+        }
+
+        h2 { font-size: 1.8rem; line-height: 1.3; }
+
+        .progress-indicator {
+            margin-top: 30px;
+            font-weight: 300;
+            letter-spacing: 2px;
+            opacity: 0.5;
+        }
+
+        /* Status Indicator */
+        .status-dot {
+            width: 8px;
+            height: 8px;
+            background: var(--gold);
+            border-radius: 50%;
+            display: inline-block;
+            margin-right: 10px;
+            box-shadow: 0 0 10px var(--gold);
+        }
+    </style>
+</head>
+<body>
+
+    <div class="header-container">
+        <h1 class="main-heading">Flip & Learn</h1>
+        <div class="sub-heading">Mastery Deck</div>
+    </div>
+
+    <div class="deck">
+        <div class="card-inner" id="card" onclick="toggleFlip()">
+            <div class="face front">
+                <div class="tag" id="cat-tag">HISTORY</div>
+                <h2 id="qText">Loading first question...</h2>
+                <p style="margin-top: 40px; font-size: 0.7rem; opacity: 0.4;">TAP TO REVEAL</p>
+            </div>
+            <div class="face back">
+                <div class="tag" style="color: #64748b;">ANSWER</div>
+                <h2 id="aText">The Answer</h2>
+                <p style="margin-top: 40px; font-size: 0.7rem; opacity: 0.6;">TAP TO LOAD NEXT</p>
+            </div>
+        </div>
+    </div>
+
+    <div class="progress-indicator">
+        <span class="status-dot"></span> <span id="counter">01 / 30</span>
+    </div>
+
+    <script>
+        const gkData = [
+            { cat: "Polity", q: "Who is the custodian of the Indian Constitution?", a: "Supreme Court" },
+            { cat: "History", q: "Who founded the Brahmo Samaj?", a: "Raja Ram Mohan Roy" },
+            { cat: "Geography", q: "Highest peak in the Aravalli Range?", a: "Guru Shikhar" },
+            { cat: "Economy", q: "Who publishes the Economic Survey of India?", a: "Ministry of Finance" },
+            { cat: "Science", q: "Light year is a unit of?", a: "Distance" },
+            { cat: "Polity", q: "Article for Election Commission?", a: "Article 324" },
+            { cat: "History", q: "First woman President of INC?", a: "Annie Besant" },
+            { cat: "Geography", q: "Oldest Fold Mountain in India?", a: "Aravalli Range" },
+            { cat: "Economy", q: "Who is the Chairman of the GST Council?", a: "Union Finance Minister" },
+            { cat: "Environment", q: "Kyoto Protocol is related to?", a: "Climate Change" },
+            { cat: "History", q: "Who started the Quit India Movement?", a: "Mahatma Gandhi" },
+            { cat: "Polity", q: "Which Article defines 'Money Bill'?", a: "Article 110" },
+            { cat: "Geography", q: "Longest river in Peninsular India?", a: "Godavari" },
+            { cat: "Science", q: "Main component of LPG?", a: "Butane" },
+            { cat: "Polity", q: "Who appoints the Chief Justice of India?", a: "The President" },
+            { cat: "History", q: "First Viceroy of India?", a: "Lord Canning" },
+            { cat: "Geography", q: "Capital of Andaman and Nicobar?", a: "Port Blair" },
+            { cat: "Economy", q: "Laffer Curve relates tax rates to?", a: "Tax Revenue" },
+            { cat: "Science", q: "PH value of pure water?", a: "7" },
+            { cat: "Environment", q: "Project Tiger was launched in?", a: "1973" },
+            { cat: "Polity", q: "Heart and Soul of Constitution?", a: "Article 32" },
+            { cat: "History", q: "Who wrote 'Discovery of India'?", a: "Jawaharlal Nehru" },
+            { cat: "Geography", q: "Majuli, the largest river island, is in?", a: "Assam" },
+            { cat: "Economy", q: "White Revolution relates to?", a: "Milk Production" },
+            { cat: "Polity", q: "Number of Schedules in Constitution?", a: "12" },
+            { cat: "History", q: "Battle of Buxar year?", a: "1764" },
+            { cat: "Science", q: "Vitamin synthesized by sunlight?", a: "Vitamin D" },
+            { cat: "Geography", q: "Suez Canal connects Mediterranean with?", a: "Red Sea" },
+            { cat: "Economy", q: "India's first Five Year Plan started in?", a: "1951" },
+            { cat: "Polity", q: "Maximum strength of Lok Sabha?", a: "552" }
+        ];
+
+        let index = 0;
+        let isFlipped = false;
+        const cardInner = document.getElementById('card');
+
+        function updateContent() {
+            document.getElementById('cat-tag').innerText = gkData[index].cat.toUpperCase();
+            document.getElementById('qText').innerText = gkData[index].q;
+            document.getElementById('aText').innerText = gkData[index].a;
+            document.getElementById('counter').innerText = `${String(index + 1).padStart(2, '0')} / 30`;
+        }
+
+        function toggleFlip() {
+            isFlipped = !isFlipped;
+            cardInner.classList.toggle('is-flipped');
+
+            // If we just flipped back to the front face...
+            if (!isFlipped) {
+                // Wait for the flip animation to halfway finish before swapping text
+                setTimeout(() => {
+                    index = (index + 1) % gkData.length;
+                    updateContent();
+                }, 350); 
+            }
+        }
+
+        // Initial Load
+        updateContent();
+    </script>
+</body>
+</html>

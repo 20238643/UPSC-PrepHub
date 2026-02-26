@@ -1,0 +1,701 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Assessment Session | UPSC PrepHub</title>
+    <meta name="description"
+        content="UPSC PrepHub timed quiz — 30 seconds per question. Test your knowledge across UPSC subjects.">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --navy: #1a2a6c;
+            --accent: #f39c12;
+            --bg: #f0f2f5;
+            --white: #ffffff;
+            --text: #2c3e50;
+            --success: #27ae60;
+            --danger: #e74c3c;
+            --timer-safe: #27ae60;
+            --timer-warn: #f39c12;
+            --timer-danger: #e74c3c;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: var(--bg);
+            color: var(--text);
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            min-height: 100vh;
+        }
+
+        /* ── Header ── */
+        .quiz-header {
+            width: 100%;
+            background: var(--navy);
+            color: white;
+            padding: 18px 5%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
+        }
+
+        .quiz-header .logo {
+            font-size: 1.2rem;
+            font-weight: 800;
+            text-decoration: none;
+            color: white;
+        }
+
+        #subject-display {
+            font-size: 1rem;
+            font-weight: 600;
+            background: rgba(255, 255, 255, 0.15);
+            padding: 6px 16px;
+            border-radius: 20px;
+        }
+
+        /* ── Timer ── */
+        .timer-wrapper {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .timer-ring {
+            position: relative;
+            width: 56px;
+            height: 56px;
+        }
+
+        .timer-ring svg {
+            transform: rotate(-90deg);
+        }
+
+        .timer-ring circle {
+            fill: none;
+            stroke-width: 4;
+        }
+
+        .timer-ring .bg-circle {
+            stroke: rgba(255, 255, 255, 0.2);
+        }
+
+        .timer-ring .progress-circle {
+            stroke: var(--timer-safe);
+            stroke-dasharray: 138.2;
+            stroke-dashoffset: 0;
+            stroke-linecap: round;
+            transition: stroke-dashoffset 1s linear, stroke 0.5s;
+        }
+
+        .timer-text {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            font-size: 1rem;
+            font-weight: 800;
+            color: white;
+        }
+
+        /* ── Main Container ── */
+        .container {
+            width: 90%;
+            max-width: 820px;
+            margin-top: 35px;
+            padding-bottom: 60px;
+        }
+
+        /* ── Progress ── */
+        .progress-info {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 12px;
+            font-size: 0.85rem;
+            color: #666;
+            font-weight: 600;
+        }
+
+        .progress-container {
+            width: 100%;
+            background: #dde1e7;
+            border-radius: 10px;
+            height: 8px;
+            margin-bottom: 28px;
+            overflow: hidden;
+        }
+
+        #progress-fill {
+            height: 100%;
+            background: linear-gradient(90deg, var(--navy), var(--accent));
+            width: 0%;
+            transition: width 0.5s ease;
+            border-radius: 10px;
+        }
+
+        /* ── Question Card ── */
+        .question-card {
+            background: var(--white);
+            padding: 40px;
+            border-radius: 20px;
+            box-shadow: 0 8px 30px rgba(0, 0, 0, 0.07);
+            animation: fadeIn 0.4s ease;
+        }
+
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+                transform: translateY(12px);
+            }
+
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .question-meta {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 20px;
+        }
+
+        .q-label {
+            font-weight: 700;
+            color: var(--accent);
+            text-transform: uppercase;
+            font-size: 0.78rem;
+            letter-spacing: 1.5px;
+        }
+
+        .subject-tag {
+            background: #eef0f8;
+            color: var(--navy);
+            font-size: 0.75rem;
+            font-weight: 700;
+            padding: 4px 12px;
+            border-radius: 20px;
+        }
+
+        #question-text {
+            font-size: 1.35rem;
+            font-weight: 700;
+            line-height: 1.5;
+            color: var(--text);
+            margin-bottom: 30px;
+        }
+
+        /* ── Options ── */
+        .options-grid {
+            display: grid;
+            gap: 12px;
+        }
+
+        .option-btn {
+            background: #f8f9fa;
+            border: 2px solid #e9ecef;
+            padding: 16px 22px;
+            border-radius: 12px;
+            text-align: left;
+            font-size: 0.97rem;
+            cursor: pointer;
+            transition: all 0.2s;
+            font-weight: 500;
+            font-family: 'Inter', sans-serif;
+            display: flex;
+            align-items: center;
+            gap: 14px;
+        }
+
+        .option-btn .opt-letter {
+            min-width: 30px;
+            height: 30px;
+            border-radius: 50%;
+            background: #e9ecef;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: 700;
+            font-size: 0.8rem;
+            color: var(--navy);
+            transition: all 0.2s;
+        }
+
+        .option-btn:hover {
+            border-color: var(--navy);
+            background: #eef0f8;
+        }
+
+        .option-btn:hover .opt-letter {
+            background: var(--navy);
+            color: white;
+        }
+
+        .option-btn.selected {
+            background: var(--navy);
+            color: white;
+            border-color: var(--navy);
+        }
+
+        .option-btn.selected .opt-letter {
+            background: rgba(255, 255, 255, 0.25);
+            color: white;
+        }
+
+        .option-btn.correct {
+            background: #eafaf1;
+            border-color: var(--success);
+            color: var(--success);
+            pointer-events: none;
+        }
+
+        .option-btn.correct .opt-letter {
+            background: var(--success);
+            color: white;
+        }
+
+        .option-btn.wrong {
+            background: #fdf0ef;
+            border-color: var(--danger);
+            color: var(--danger);
+            pointer-events: none;
+        }
+
+        .option-btn.wrong .opt-letter {
+            background: var(--danger);
+            color: white;
+        }
+
+        .option-btn.disabled {
+            pointer-events: none;
+            opacity: 0.6;
+        }
+
+        /* ── Feedback Banner ── */
+        .feedback-banner {
+            display: none;
+            padding: 12px 20px;
+            border-radius: 10px;
+            margin-top: 18px;
+            font-weight: 600;
+            font-size: 0.9rem;
+            animation: fadeIn 0.3s ease;
+        }
+
+        .feedback-banner.correct {
+            background: #eafaf1;
+            color: var(--success);
+            border: 1px solid #a9dfbf;
+            display: block;
+        }
+
+        .feedback-banner.wrong {
+            background: #fdf0ef;
+            color: var(--danger);
+            border: 1px solid #f1948a;
+            display: block;
+        }
+
+        .feedback-banner.timeout {
+            background: #fef9e7;
+            color: #d68910;
+            border: 1px solid #f9e79f;
+            display: block;
+        }
+
+        /* ── Controls ── */
+        .controls {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-top: 28px;
+            gap: 15px;
+        }
+
+        .btn-nav {
+            padding: 13px 30px;
+            border-radius: 10px;
+            border: none;
+            font-weight: 700;
+            cursor: pointer;
+            transition: all 0.3s;
+            font-family: 'Inter', sans-serif;
+            font-size: 0.95rem;
+        }
+
+        .btn-next {
+            background: var(--navy);
+            color: white;
+            flex: 1;
+            max-width: 220px;
+        }
+
+        .btn-next:hover {
+            background: #2a3a7c;
+            transform: translateY(-2px);
+        }
+
+        .btn-skip {
+            background: transparent;
+            color: #95a5a6;
+            border: 2px solid #dde1e7;
+        }
+
+        .btn-skip:hover {
+            border-color: #bdc3c7;
+            color: #7f8c8d;
+        }
+
+        .btn-exit {
+            background: transparent;
+            color: #95a5a6;
+            font-size: 0.85rem;
+        }
+
+        /* ── Loading State ── */
+        .loading-state {
+            text-align: center;
+            padding: 60px 20px;
+        }
+
+        .spinner {
+            width: 50px;
+            height: 50px;
+            border: 4px solid #e9ecef;
+            border-top-color: var(--navy);
+            border-radius: 50%;
+            animation: spin 0.8s linear infinite;
+            margin: 0 auto 20px;
+        }
+
+        @keyframes spin {
+            to {
+                transform: rotate(360deg);
+            }
+        }
+
+        /* ── Timer pulse animation ── */
+        @keyframes pulse {
+
+            0%,
+            100% {
+                transform: scale(1);
+            }
+
+            50% {
+                transform: scale(1.08);
+            }
+        }
+
+        .timer-pulse {
+            animation: pulse 0.5s ease infinite;
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="quiz-header">
+        <a href="index.html" class="logo">UPSC PrepHub</a>
+        <span id="subject-display">Loading...</span>
+        <div class="timer-wrapper">
+            <div class="timer-ring" id="timer-ring">
+                <svg width="56" height="56" viewBox="0 0 56 56">
+                    <circle class="bg-circle" cx="28" cy="28" r="22" />
+                    <circle class="progress-circle" id="timer-circle" cx="28" cy="28" r="22" />
+                </svg>
+                <div class="timer-text" id="timer-text">20</div>
+            </div>
+        </div>
+    </div>
+
+    <div class="container">
+        <div class="progress-info">
+            <span id="q-count">Question 1 of 20</span>
+            <span id="score-live">Score: 0</span>
+        </div>
+        <div class="progress-container">
+            <div id="progress-fill"></div>
+        </div>
+
+        <div class="question-card" id="question-card">
+            <div class="loading-state">
+                <div class="spinner"></div>
+                <p>Loading questions...</p>
+            </div>
+        </div>
+
+        <div class="controls" id="controls" style="display:none;">
+            <button class="btn-nav btn-exit" onclick="confirmExit()">✕ Exit</button>
+            <button class="btn-nav btn-skip" id="skip-btn" onclick="handleSkip()">Skip →</button>
+            <button class="btn-nav btn-next" id="next-btn" onclick="handleNext()">Next Question →</button>
+        </div>
+    </div>
+
+    <script>
+        // ── Config ──
+        const TIME_PER_QUESTION = 20;
+        const TOTAL_QUESTIONS = 20;
+
+        // ── State ──
+        const urlParams = new URLSearchParams(window.location.search);
+        const subject = urlParams.get('subject') || 'General Studies';
+        document.getElementById('subject-display').textContent = subject;
+
+        let questions = [];
+        let currentIndex = 0;
+        let score = 0;
+        let answers = [];
+        let timerInterval = null;
+        let timeLeft = TIME_PER_QUESTION;
+        let answered = false;
+
+        // ── Timer SVG constants ──
+        const CIRCUMFERENCE = 2 * Math.PI * 22; // r=22 → ~138.2
+        const timerCircle = document.getElementById('timer-circle');
+        const timerText = document.getElementById('timer-text');
+        const timerRing = document.getElementById('timer-ring');
+
+        // ── Fetch Questions from /data/questions.json ──
+        async function fetchQuestions() {
+            try {
+                const res = await fetch('/data/questions.json');
+                if (!res.ok) {
+                    throw new Error(`HTTP ${res.status}: Could not load questions file.`);
+                }
+                const data = await res.json();
+                const subjectQuestions = data[subject];
+
+                if (!subjectQuestions || subjectQuestions.length === 0) {
+                    showError(`No questions found for subject: "<strong>${subject}</strong>". Please go back and choose a valid subject.`);
+                    return;
+                }
+
+                // Shuffle and take up to 20
+                questions = shuffle(subjectQuestions).slice(0, TOTAL_QUESTIONS);
+                document.getElementById('controls').style.display = 'flex';
+                renderQuestion();
+            } catch (err) {
+                console.error('fetchQuestions error:', err);
+                showError('⚠️ Could not load questions from <code>data/questions.json</code>. Make sure the server is running at <strong>http://localhost:3000</strong>.');
+            }
+        }
+
+        function shuffle(arr) {
+            const a = [...arr];
+            for (let i = a.length - 1; i > 0; i--) {
+                const j = Math.floor(Math.random() * (i + 1));
+                [a[i], a[j]] = [a[j], a[i]];
+            }
+            return a;
+        }
+
+        // ── Render Question ──
+        function renderQuestion() {
+            answered = false;
+            const q = questions[currentIndex];
+            const opts = ['A', 'B', 'C', 'D'];
+            const options = [q.option_a, q.option_b, q.option_c, q.option_d];
+
+            // Update meta
+            document.getElementById('q-count').textContent = `Question ${currentIndex + 1} of ${questions.length}`;
+            document.getElementById('score-live').textContent = `Score: ${score}`;
+            const progress = ((currentIndex) / questions.length) * 100;
+            document.getElementById('progress-fill').style.width = `${progress}%`;
+
+            // Build card HTML
+            document.getElementById('question-card').innerHTML = `
+                <div class="question-meta">
+                    <span class="q-label">Question ${currentIndex + 1}</span>
+                    <span class="subject-tag">${subject}</span>
+                </div>
+                <h2 id="question-text">${q.question_text}</h2>
+                <div class="options-grid" id="options-container">
+                    ${options.map((opt, i) => `
+                        <button class="option-btn" id="opt-${i}" onclick="selectAnswer(${i}, '${escapeQuote(opt)}')">
+                            <span class="opt-letter">${opts[i]}</span>
+                            <span>${opt}</span>
+                        </button>
+                    `).join('')}
+                </div>
+                <div class="feedback-banner" id="feedback-banner"></div>
+            `;
+
+            // Update next button
+            document.getElementById('next-btn').textContent =
+                currentIndex === questions.length - 1 ? 'Finish Quiz 🏁' : 'Next Question →';
+
+            startTimer();
+        }
+
+        function escapeQuote(str) {
+            return str.replace(/'/g, "\\'").replace(/"/g, '&quot;');
+        }
+
+        // ── Timer ──
+        function startTimer() {
+            clearInterval(timerInterval);
+            timeLeft = TIME_PER_QUESTION;
+            updateTimerUI();
+            timerRing.classList.remove('timer-pulse');
+
+            timerInterval = setInterval(() => {
+                timeLeft--;
+                updateTimerUI();
+
+                if (timeLeft <= 0) {
+                    clearInterval(timerInterval);
+                    handleTimeout();
+                }
+            }, 1000);
+        }
+
+        function updateTimerUI() {
+            timerText.textContent = timeLeft;
+            const offset = CIRCUMFERENCE * (1 - timeLeft / TIME_PER_QUESTION);
+            timerCircle.style.strokeDashoffset = offset;
+
+            if (timeLeft > 15) {
+                timerCircle.style.stroke = 'var(--timer-safe)';
+            } else if (timeLeft > 8) {
+                timerCircle.style.stroke = 'var(--timer-warn)';
+            } else {
+                timerCircle.style.stroke = 'var(--timer-danger)';
+                if (timeLeft <= 5) timerRing.classList.add('timer-pulse');
+            }
+        }
+
+        function handleTimeout() {
+            if (answered) return;
+            answered = true;
+            timerRing.classList.remove('timer-pulse');
+
+            const q = questions[currentIndex];
+            answers.push({ question: q.question_text, selected: null, correct: q.correct_option });
+
+            // Disable all options and highlight correct
+            disableOptions(null, q.correct_option, q);
+
+            const banner = document.getElementById('feedback-banner');
+            banner.className = 'feedback-banner timeout';
+            banner.textContent = `⏰ Time's up! The correct answer was: ${q.correct_option}`;
+        }
+
+        // ── Select Answer ──
+        function selectAnswer(index, selectedOpt) {
+            if (answered) return;
+            answered = true;
+            clearInterval(timerInterval);
+            timerRing.classList.remove('timer-pulse');
+
+            const q = questions[currentIndex];
+            const isCorrect = selectedOpt === q.correct_option;
+
+            if (isCorrect) score++;
+
+            answers.push({ question: q.question_text, selected: selectedOpt, correct: q.correct_option });
+
+            disableOptions(index, q.correct_option, q);
+
+            const banner = document.getElementById('feedback-banner');
+            if (isCorrect) {
+                banner.className = 'feedback-banner correct';
+                banner.textContent = '✅ Correct! Well done.';
+            } else {
+                banner.className = 'feedback-banner wrong';
+                banner.textContent = `❌ Incorrect. Correct answer: ${q.correct_option}`;
+            }
+        }
+
+        function disableOptions(selectedIndex, correctAnswer, q) {
+            const opts = [q.option_a, q.option_b, q.option_c, q.option_d];
+            opts.forEach((opt, i) => {
+                const btn = document.getElementById(`opt-${i}`);
+                if (!btn) return;
+                btn.classList.add('disabled');
+                if (opt === correctAnswer) {
+                    btn.classList.add('correct');
+                } else if (i === selectedIndex) {
+                    btn.classList.add('wrong');
+                }
+            });
+        }
+
+        // ── Navigation ──
+        function handleNext() {
+            if (!answered) {
+                // Auto-skip if not answered
+                handleSkip();
+                return;
+            }
+            goToNext();
+        }
+
+        function handleSkip() {
+            if (answered) { goToNext(); return; }
+            clearInterval(timerInterval);
+            answered = true;
+            timerRing.classList.remove('timer-pulse');
+
+            const q = questions[currentIndex];
+            answers.push({ question: q.question_text, selected: null, correct: q.correct_option });
+            disableOptions(null, q.correct_option, q);
+
+            const banner = document.getElementById('feedback-banner');
+            banner.className = 'feedback-banner timeout';
+            banner.textContent = `⏭️ Skipped. Correct answer: ${q.correct_option}`;
+
+            setTimeout(goToNext, 1200);
+        }
+
+        function goToNext() {
+            currentIndex++;
+            if (currentIndex < questions.length) {
+                renderQuestion();
+            } else {
+                finishQuiz();
+            }
+        }
+
+        function finishQuiz() {
+            clearInterval(timerInterval);
+            const result = { subject, score, total: questions.length, answers };
+            localStorage.setItem('quizResult', JSON.stringify(result));
+            window.location.href = 'results.html';
+        }
+
+        function confirmExit() {
+            if (confirm('Are you sure you want to exit? Your progress will be lost.')) {
+                clearInterval(timerInterval);
+                window.location.href = 'index.html';
+            }
+        }
+
+        function showError(msg) {
+            document.getElementById('question-card').innerHTML = `
+                <div class="loading-state">
+                    <p style="color:#e74c3c; font-weight:600; font-size:1.1rem;">⚠️ ${msg}</p>
+                    <a href="index.html" style="display:inline-block; margin-top:20px; padding:12px 25px; background:#1a2a6c; color:white; border-radius:10px; text-decoration:none; font-weight:700;">← Back to Home</a>
+                </div>
+            `;
+        }
+
+        // ── Init ──
+        fetchQuestions();
+    </script>
+</body>
+
+</html>

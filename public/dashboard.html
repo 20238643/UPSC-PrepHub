@@ -1,0 +1,1126 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Dashboard | UPSC PrepHub</title>
+    <meta name="description" content="Track your UPSC PrepHub quiz performance, XP, level, streaks and achievements.">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700;800;900&display=swap"
+        rel="stylesheet">
+    <style>
+        :root {
+            --navy: #1a2a6c;
+            --navy-light: #2a3a7c;
+            --accent: #f39c12;
+            --accent2: #e67e22;
+            --bg: #0d0f1a;
+            --card: #161828;
+            --card2: #1e2133;
+            --border: rgba(255, 255, 255, 0.08);
+            --text: #e8eaf6;
+            --text-sub: #8b92b8;
+            --green: #2ecc71;
+            --red: #e74c3c;
+            --blue: #3498db;
+            --purple: #9b59b6;
+            --gold: #f1c40f;
+            --white: #ffffff;
+        }
+
+        *,
+        *::before,
+        *::after {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            background: var(--bg);
+            color: var(--text);
+            min-height: 100vh;
+        }
+
+        /* ── Navbar ── */
+        .navbar {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 16px 5%;
+            background: rgba(13, 15, 26, 0.95);
+            backdrop-filter: blur(12px);
+            position: sticky;
+            top: 0;
+            z-index: 100;
+            border-bottom: 1px solid var(--border);
+        }
+
+        .logo {
+            font-size: 1.4rem;
+            font-weight: 800;
+            color: white;
+            text-decoration: none;
+        }
+
+        .logo span {
+            color: var(--accent);
+        }
+
+        .nav-right {
+            display: flex;
+            align-items: center;
+            gap: 16px;
+        }
+
+        .nav-right a {
+            color: var(--text-sub);
+            text-decoration: none;
+            font-size: 0.88rem;
+            font-weight: 500;
+            transition: color 0.2s;
+        }
+
+        .nav-right a:hover {
+            color: white;
+        }
+
+        .btn-logout {
+            background: rgba(231, 76, 60, 0.15);
+            color: #ff6b6b !important;
+            padding: 8px 18px;
+            border-radius: 8px;
+            border: 1px solid rgba(231, 76, 60, 0.3);
+            cursor: pointer;
+            font-size: 0.88rem;
+            font-weight: 600;
+            font-family: 'Inter', sans-serif;
+            transition: all 0.2s;
+        }
+
+        .btn-logout:hover {
+            background: rgba(231, 76, 60, 0.25);
+            transform: translateY(-1px);
+        }
+
+        /* ── Main Layout ── */
+        .dashboard {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 32px 5% 60px;
+        }
+
+        /* ── Hero Welcome ── */
+        .hero-welcome {
+            background: linear-gradient(135deg, #1a2a6c 0%, #2d1b69 50%, #1a1a2e 100%);
+            border-radius: 24px;
+            padding: 40px 48px;
+            margin-bottom: 28px;
+            position: relative;
+            overflow: hidden;
+            border: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+        .hero-welcome::before {
+            content: '';
+            position: absolute;
+            top: -50px;
+            right: -50px;
+            width: 300px;
+            height: 300px;
+            background: radial-gradient(circle, rgba(243, 156, 18, 0.15) 0%, transparent 70%);
+            pointer-events: none;
+        }
+
+        .hero-welcome::after {
+            content: '';
+            position: absolute;
+            bottom: -80px;
+            left: -40px;
+            width: 250px;
+            height: 250px;
+            background: radial-gradient(circle, rgba(155, 89, 182, 0.12) 0%, transparent 70%);
+            pointer-events: none;
+        }
+
+        .hero-top {
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-start;
+            flex-wrap: wrap;
+            gap: 20px;
+            position: relative;
+            z-index: 1;
+        }
+
+        .welcome-text h1 {
+            font-size: 2.2rem;
+            font-weight: 900;
+            color: white;
+            line-height: 1.2;
+        }
+
+        .welcome-text h1 .name-highlight {
+            background: linear-gradient(90deg, var(--accent), #ff6b35);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .welcome-text p {
+            color: rgba(255, 255, 255, 0.6);
+            margin-top: 8px;
+            font-size: 0.95rem;
+        }
+
+        .rank-badge {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            background: rgba(255, 255, 255, 0.08);
+            border: 1px solid rgba(255, 255, 255, 0.15);
+            border-radius: 16px;
+            padding: 14px 20px;
+        }
+
+        .rank-icon {
+            font-size: 2.4rem;
+        }
+
+        .rank-info .rank-name {
+            font-size: 0.75rem;
+            color: rgba(255, 255, 255, 0.5);
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        .rank-info .rank-title {
+            font-size: 1.1rem;
+            font-weight: 800;
+            color: white;
+        }
+
+        /* XP Bar */
+        .xp-section {
+            margin-top: 28px;
+            position: relative;
+            z-index: 1;
+        }
+
+        .xp-labels {
+            display: flex;
+            justify-content: space-between;
+            margin-bottom: 8px;
+            font-size: 0.82rem;
+            color: rgba(255, 255, 255, 0.6);
+        }
+
+        .xp-labels .xp-current {
+            font-weight: 700;
+            color: var(--accent);
+            font-size: 0.9rem;
+        }
+
+        .xp-bar-track {
+            height: 12px;
+            background: rgba(255, 255, 255, 0.1);
+            border-radius: 50px;
+            overflow: hidden;
+        }
+
+        .xp-bar-fill {
+            height: 100%;
+            background: linear-gradient(90deg, var(--accent), #ff6b35);
+            border-radius: 50px;
+            transition: width 1.2s cubic-bezier(0.4, 0, 0.2, 1);
+            width: 0%;
+            box-shadow: 0 0 12px rgba(243, 156, 18, 0.5);
+        }
+
+        /* ── Stats 4-Grid ── */
+        .stats-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 16px;
+            margin-bottom: 28px;
+        }
+
+        @media (max-width: 768px) {
+            .stats-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+
+            .hero-welcome {
+                padding: 28px 24px;
+            }
+
+            .welcome-text h1 {
+                font-size: 1.6rem;
+            }
+        }
+
+        .stat-card {
+            background: var(--card);
+            border-radius: 18px;
+            padding: 24px 20px;
+            border: 1px solid var(--border);
+            position: relative;
+            overflow: hidden;
+            transition: transform 0.2s, border-color 0.2s;
+        }
+
+        .stat-card:hover {
+            transform: translateY(-4px);
+            border-color: rgba(255, 255, 255, 0.15);
+        }
+
+        .stat-card .card-glow {
+            position: absolute;
+            top: -20px;
+            right: -20px;
+            width: 80px;
+            height: 80px;
+            border-radius: 50%;
+            opacity: 0.12;
+        }
+
+        .stat-card .card-icon {
+            font-size: 1.8rem;
+            margin-bottom: 12px;
+        }
+
+        .stat-card .card-value {
+            font-size: 2rem;
+            font-weight: 900;
+            color: white;
+            line-height: 1;
+        }
+
+        .stat-card .card-label {
+            font-size: 0.78rem;
+            color: var(--text-sub);
+            text-transform: uppercase;
+            letter-spacing: 0.8px;
+            margin-top: 6px;
+        }
+
+        /* Streak card */
+        .streak-card {
+            border-color: rgba(231, 76, 60, 0.3);
+        }
+
+        .streak-card .card-value {
+            color: #ff6b6b;
+        }
+
+        @keyframes flamePulse {
+
+            0%,
+            100% {
+                transform: scale(1);
+            }
+
+            50% {
+                transform: scale(1.15);
+            }
+        }
+
+        .streak-card .card-icon {
+            animation: flamePulse 1.5s ease-in-out infinite;
+        }
+
+        /* ── Two column layout ── */
+        .two-col {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 20px;
+            margin-bottom: 28px;
+        }
+
+        @media (max-width: 900px) {
+            .two-col {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        /* ── Section Cards ── */
+        .section-card {
+            background: var(--card);
+            border-radius: 20px;
+            padding: 28px;
+            border: 1px solid var(--border);
+        }
+
+        .section-card h2 {
+            font-size: 1.05rem;
+            font-weight: 700;
+            color: white;
+            margin-bottom: 20px;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        /* ── Subject Stats ── */
+        .subject-list {
+            display: flex;
+            flex-direction: column;
+            gap: 14px;
+        }
+
+        .subject-row {
+            display: flex;
+            flex-direction: column;
+            gap: 6px;
+        }
+
+        .subject-row-top {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .subject-name {
+            font-size: 0.88rem;
+            font-weight: 600;
+            color: var(--text);
+            display: flex;
+            align-items: center;
+            gap: 6px;
+        }
+
+        .subject-stat {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            font-size: 0.82rem;
+            color: var(--text-sub);
+        }
+
+        .subject-best {
+            font-weight: 700;
+            color: white;
+        }
+
+        .trend-badge {
+            font-size: 0.75rem;
+            font-weight: 700;
+            padding: 2px 8px;
+            border-radius: 20px;
+        }
+
+        .trend-up {
+            background: rgba(46, 204, 113, 0.15);
+            color: var(--green);
+        }
+
+        .trend-down {
+            background: rgba(231, 76, 60, 0.15);
+            color: var(--red);
+        }
+
+        .trend-same {
+            background: rgba(139, 146, 184, 0.15);
+            color: var(--text-sub);
+        }
+
+        .trend-none {
+            background: rgba(139, 146, 184, 0.1);
+            color: var(--text-sub);
+        }
+
+        .subject-bar-track {
+            height: 6px;
+            background: rgba(255, 255, 255, 0.06);
+            border-radius: 50px;
+            overflow: hidden;
+        }
+
+        .subject-bar-fill {
+            height: 100%;
+            border-radius: 50px;
+            transition: width 1s ease;
+        }
+
+        .no-attempts {
+            font-size: 0.78rem;
+            color: var(--text-sub);
+            font-style: italic;
+        }
+
+        /* ── Badges ── */
+        .badges-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(130px, 1fr));
+            gap: 12px;
+        }
+
+        .badge-item {
+            background: var(--card2);
+            border-radius: 14px;
+            padding: 16px 12px;
+            text-align: center;
+            border: 1px solid var(--border);
+            transition: transform 0.2s, border-color 0.2s;
+            cursor: default;
+        }
+
+        .badge-item:hover {
+            transform: translateY(-3px);
+            border-color: rgba(243, 156, 18, 0.4);
+        }
+
+        .badge-item .badge-icon {
+            font-size: 1.8rem;
+            margin-bottom: 6px;
+        }
+
+        .badge-item .badge-name {
+            font-size: 0.78rem;
+            font-weight: 700;
+            color: white;
+            margin-bottom: 3px;
+        }
+
+        .badge-item .badge-desc {
+            font-size: 0.68rem;
+            color: var(--text-sub);
+            line-height: 1.4;
+        }
+
+        .badge-locked {
+            opacity: 0.3;
+            filter: grayscale(1);
+        }
+
+        .no-badges {
+            color: var(--text-sub);
+            font-size: 0.9rem;
+            text-align: center;
+            padding: 20px;
+        }
+
+        /* ── Recent History ── */
+        .history-list {
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+        }
+
+        .history-item {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            background: var(--card2);
+            border-radius: 12px;
+            padding: 12px 16px;
+            border: 1px solid var(--border);
+            transition: border-color 0.2s;
+        }
+
+        .history-item:hover {
+            border-color: rgba(255, 255, 255, 0.12);
+        }
+
+        .history-left {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+        }
+
+        .history-subject-icon {
+            width: 36px;
+            height: 36px;
+            border-radius: 10px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.1rem;
+            background: rgba(255, 255, 255, 0.06);
+            flex-shrink: 0;
+        }
+
+        .history-info .h-subject {
+            font-size: 0.88rem;
+            font-weight: 700;
+            color: white;
+        }
+
+        .history-info .h-date {
+            font-size: 0.72rem;
+            color: var(--text-sub);
+            margin-top: 2px;
+        }
+
+        .history-right {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+        }
+
+        .h-score {
+            font-size: 0.88rem;
+            font-weight: 700;
+            color: var(--text-sub);
+        }
+
+        .h-perc {
+            display: inline-block;
+            padding: 4px 12px;
+            border-radius: 20px;
+            font-weight: 800;
+            font-size: 0.82rem;
+            min-width: 52px;
+            text-align: center;
+        }
+
+        .h-excellent {
+            background: rgba(46, 204, 113, 0.15);
+            color: var(--green);
+        }
+
+        .h-good {
+            background: rgba(52, 152, 219, 0.15);
+            color: var(--blue);
+        }
+
+        .h-average {
+            background: rgba(243, 156, 18, 0.15);
+            color: var(--accent);
+        }
+
+        .h-poor {
+            background: rgba(231, 76, 60, 0.15);
+            color: var(--red);
+        }
+
+        .h-xp {
+            font-size: 0.75rem;
+            color: var(--accent);
+            font-weight: 700;
+        }
+
+        .no-history {
+            text-align: center;
+            padding: 30px;
+            color: var(--text-sub);
+        }
+
+        .no-history .no-h-icon {
+            font-size: 2.5rem;
+            margin-bottom: 10px;
+        }
+
+        /* ── Chart Canvas ── */
+        #subjectChart {
+            max-height: 200px;
+            margin-top: 8px;
+        }
+
+        /* ── CTA Button ── */
+        .cta-section {
+            background: linear-gradient(135deg, rgba(243, 156, 18, 0.12), rgba(255, 107, 53, 0.08));
+            border-radius: 20px;
+            border: 1px solid rgba(243, 156, 18, 0.2);
+            padding: 28px;
+            text-align: center;
+            margin-top: 28px;
+        }
+
+        .cta-section h3 {
+            font-size: 1.2rem;
+            font-weight: 800;
+            color: white;
+            margin-bottom: 8px;
+        }
+
+        .cta-section p {
+            color: var(--text-sub);
+            font-size: 0.9rem;
+            margin-bottom: 20px;
+        }
+
+        .btn-cta {
+            display: inline-block;
+            background: linear-gradient(135deg, var(--accent), var(--accent2));
+            color: white;
+            padding: 14px 36px;
+            border-radius: 50px;
+            font-weight: 800;
+            font-size: 0.95rem;
+            text-decoration: none;
+            transition: all 0.3s;
+            box-shadow: 0 8px 25px rgba(243, 156, 18, 0.3);
+        }
+
+        .btn-cta:hover {
+            transform: scale(1.05);
+            box-shadow: 0 12px 30px rgba(243, 156, 18, 0.4);
+        }
+
+        /* ── Fullscreen Loading ── */
+        #loading-screen {
+            position: fixed;
+            inset: 0;
+            background: var(--bg);
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            z-index: 9999;
+            gap: 20px;
+        }
+
+        .loading-logo {
+            font-size: 1.6rem;
+            font-weight: 900;
+            color: white;
+        }
+
+        .loading-logo span {
+            color: var(--accent);
+        }
+
+        .loading-spinner {
+            width: 40px;
+            height: 40px;
+            border: 3px solid rgba(255, 255, 255, 0.1);
+            border-top-color: var(--accent);
+            border-radius: 50%;
+            animation: spin 0.8s linear infinite;
+        }
+
+        @keyframes spin {
+            to {
+                transform: rotate(360deg);
+            }
+        }
+
+        .loading-text {
+            font-size: 0.9rem;
+            color: var(--text-sub);
+        }
+
+        /* ── Toast ── */
+        .toast {
+            position: fixed;
+            bottom: 30px;
+            right: 30px;
+            background: var(--card2);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            border-radius: 12px;
+            padding: 14px 20px;
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.5);
+            transform: translateY(100px);
+            opacity: 0;
+            transition: all 0.4s cubic-bezier(0.34, 1.56, 0.64, 1);
+            z-index: 1000;
+            max-width: 320px;
+        }
+
+        .toast.show {
+            transform: translateY(0);
+            opacity: 1;
+        }
+
+        .toast-icon {
+            font-size: 1.4rem;
+            flex-shrink: 0;
+        }
+
+        .toast-text .toast-title {
+            font-size: 0.9rem;
+            font-weight: 700;
+            color: white;
+        }
+
+        .toast-text .toast-sub {
+            font-size: 0.78rem;
+            color: var(--text-sub);
+            margin-top: 2px;
+        }
+
+        /* ── Level Up Overlay ── */
+        @keyframes levelUpPop {
+            0% {
+                transform: translate(-50%, -50%) scale(0.3);
+                opacity: 0;
+            }
+
+            60% {
+                transform: translate(-50%, -50%) scale(1.1);
+                opacity: 1;
+            }
+
+            100% {
+                transform: translate(-50%, -50%) scale(1);
+                opacity: 1;
+            }
+        }
+
+        /* ── Responsive ── */
+        @media (max-width: 600px) {
+            .nav-right a:not(.btn-logout) {
+                display: none;
+            }
+
+            .cta-section {
+                padding: 20px;
+            }
+
+            .section-card {
+                padding: 20px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <!-- Loading -->
+    <div id="loading-screen">
+        <div class="loading-logo">UPSC <span>PrepHub</span></div>
+        <div class="loading-spinner"></div>
+        <div class="loading-text">Loading your stats...</div>
+    </div>
+
+    <!-- Navbar -->
+    <nav class="navbar">
+        <a href="index.html" class="logo">UPSC <span>PrepHub</span></a>
+        <div class="nav-right">
+            <a href="index.html">🏠 Home</a>
+            <a href="index.html#subjects">📚 Quizzes</a>
+            <a href="flip-learn.html">🃏 Flip &amp; Learn</a>
+            <button class="btn-logout" onclick="logout()">Sign Out</button>
+        </div>
+    </nav>
+
+    <!-- Main Dashboard -->
+    <div class="dashboard" id="main-dashboard" style="display:none;">
+
+        <!-- Hero Welcome -->
+        <div class="hero-welcome">
+            <div class="hero-top">
+                <div class="welcome-text">
+                    <h1>Welcome back, <span class="name-highlight" id="hero-name">Aspirant</span>! 👋</h1>
+                    <p id="hero-sub">Loading your performance data...</p>
+                </div>
+                <div class="rank-badge" id="rank-badge">
+                    <div class="rank-icon" id="rank-icon">🥉</div>
+                    <div class="rank-info">
+                        <div class="rank-name">Current Rank</div>
+                        <div class="rank-title" id="rank-title">Bronze</div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="xp-section">
+                <div class="xp-labels">
+                    <span>Level <strong id="level-num">1</strong></span>
+                    <span class="xp-current" id="xp-label">0 XP</span>
+                    <span>Level <strong id="next-level-num">2</strong></span>
+                </div>
+                <div class="xp-bar-track">
+                    <div class="xp-bar-fill" id="xp-bar"></div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Quick Stats -->
+        <div class="stats-grid">
+            <div class="stat-card">
+                <div class="card-glow" style="background:#f39c12;"></div>
+                <div class="card-icon">⚡</div>
+                <div class="card-value" id="stat-xp">0</div>
+                <div class="card-label">Total XP</div>
+            </div>
+            <div class="stat-card streak-card">
+                <div class="card-glow" style="background:#e74c3c;"></div>
+                <div class="card-icon">🔥</div>
+                <div class="card-value" id="stat-streak">0</div>
+                <div class="card-label">Day Streak</div>
+            </div>
+            <div class="stat-card">
+                <div class="card-glow" style="background:#3498db;"></div>
+                <div class="card-icon">📝</div>
+                <div class="card-value" id="stat-total">0</div>
+                <div class="card-label">Quizzes Taken</div>
+            </div>
+            <div class="stat-card">
+                <div class="card-glow" style="background:#2ecc71;"></div>
+                <div class="card-icon">🏆</div>
+                <div class="card-value" id="stat-badges">0</div>
+                <div class="card-label">Badges Earned</div>
+            </div>
+        </div>
+
+        <!-- Two column -->
+        <div class="two-col">
+            <!-- Subject Performance -->
+            <div class="section-card">
+                <h2>📊 Subject Performance</h2>
+                <div class="subject-list" id="subject-list">
+                    <div style="color:var(--text-sub); font-size:0.9rem;">Loading...</div>
+                </div>
+            </div>
+
+            <!-- Achievements -->
+            <div class="section-card">
+                <h2>🏅 Achievements</h2>
+                <div class="badges-grid" id="badges-grid">
+                    <div class="no-badges">Loading badges...</div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Recent History -->
+        <div class="section-card" style="margin-bottom:0;">
+            <h2>⏱️ Recent Quiz History</h2>
+            <div class="history-list" id="history-list">
+                <div style="color:var(--text-sub); font-size:0.9rem; text-align:center; padding:20px;">Loading...</div>
+            </div>
+        </div>
+
+        <!-- CTA -->
+        <div class="cta-section">
+            <h3>🎯 Ready to earn more XP?</h3>
+            <p>Take a quiz to level up and unlock more achievements!</p>
+            <a href="index.html#subjects" class="btn-cta">Start a Quiz →</a>
+        </div>
+    </div>
+
+    <!-- Toast notification -->
+    <div class="toast" id="toast">
+        <div class="toast-icon" id="toast-icon">🎉</div>
+        <div class="toast-text">
+            <div class="toast-title" id="toast-title">Welcome back!</div>
+            <div class="toast-sub" id="toast-sub"></div>
+        </div>
+    </div>
+
+    <script>
+        const SUBJECT_ICONS = {
+            Geography: '🌍', History: '🏛️', Polity: '⚖️', Economics: '📈', Science: '🔬'
+        };
+
+        const SUBJECT_COLORS = {
+            Geography: '#3498db', History: '#9b59b6', Polity: '#e74c3c',
+            Economics: '#2ecc71', Science: '#f39c12'
+        };
+
+        // All possible badges for locked preview
+        const ALL_BADGES = [
+            { id: 'first', icon: '🎯', name: 'First Quiz', desc: 'Complete your first quiz' },
+            { id: 'quizzer', icon: '📝', name: 'Quizzer', desc: '5 quizzes completed' },
+            { id: 'dedicated', icon: '💪', name: 'Dedicated', desc: '20 quizzes completed' },
+            { id: 'scholar', icon: '🏆', name: 'Scholar', desc: 'Score 80%+ in a quiz' },
+            { id: 'perfect', icon: '⭐', name: 'Perfect Score', desc: 'Score 100% on a quiz' },
+            { id: 'explorer', icon: '🌍', name: 'Explorer', desc: 'Try 3+ subjects' },
+            { id: 'allrounder', icon: '🎓', name: 'All-Rounder', desc: 'Try all 5 subjects' },
+            { id: 'streak3', icon: '🔥', name: 'On Fire', desc: '3-day streak' },
+            { id: 'streak7', icon: '⚡', name: 'Lightning', desc: '7-day streak' },
+            { id: 'xp1k', icon: '💎', name: 'Diamond Mind', desc: '1000+ XP earned' }
+        ];
+
+        function showToast(icon, title, sub, delay = 600) {
+            setTimeout(() => {
+                document.getElementById('toast-icon').textContent = icon;
+                document.getElementById('toast-title').textContent = title;
+                document.getElementById('toast-sub').textContent = sub;
+                const toast = document.getElementById('toast');
+                toast.classList.add('show');
+                setTimeout(() => toast.classList.remove('show'), 4000);
+            }, delay);
+        }
+
+        function percClass(p) {
+            if (p >= 80) return 'h-excellent';
+            if (p >= 60) return 'h-good';
+            if (p >= 40) return 'h-average';
+            return 'h-poor';
+        }
+
+        function renderSubjects(subjectStats) {
+            const container = document.getElementById('subject-list');
+            const subjects = ['Geography', 'History', 'Polity', 'Economics', 'Science'];
+            container.innerHTML = subjects.map(s => {
+                const stat = subjectStats[s];
+                const color = SUBJECT_COLORS[s];
+                const icon = SUBJECT_ICONS[s];
+                if (!stat || stat.attempts === 0) {
+                    return `<div class="subject-row">
+                        <div class="subject-row-top">
+                            <span class="subject-name">${icon} ${s}</span>
+                            <span class="no-attempts">Not attempted</span>
+                        </div>
+                        <div class="subject-bar-track"><div class="subject-bar-fill" style="width:0%; background:${color};"></div></div>
+                    </div>`;
+                }
+                const trendHTML = stat.trend === 'up'
+                    ? `<span class="trend-badge trend-up">↑ Improving</span>`
+                    : stat.trend === 'down'
+                        ? `<span class="trend-badge trend-down">↓ Dropped</span>`
+                        : `<span class="trend-badge trend-same">→ Same</span>`;
+                return `<div class="subject-row">
+                    <div class="subject-row-top">
+                        <span class="subject-name">${icon} ${s}</span>
+                        <span class="subject-stat">
+                            <span class="subject-best">${stat.best}%</span> best · ${stat.attempts} quiz${stat.attempts > 1 ? 'zes' : ''}
+                            ${trendHTML}
+                        </span>
+                    </div>
+                    <div class="subject-bar-track">
+                        <div class="subject-bar-fill" style="width:0%; background:${color};" data-width="${stat.best}%"></div>
+                    </div>
+                </div>`;
+            }).join('');
+
+            // Animate bars with delay
+            setTimeout(() => {
+                document.querySelectorAll('.subject-bar-fill[data-width]').forEach(el => {
+                    el.style.width = el.dataset.width;
+                });
+            }, 300);
+        }
+
+        function renderBadges(earnedBadges) {
+            const container = document.getElementById('badges-grid');
+            const earnedIds = earnedBadges.map(b => b.id);
+            container.innerHTML = ALL_BADGES.map(b => {
+                const isEarned = earnedIds.includes(b.id);
+                return `<div class="badge-item ${isEarned ? '' : 'badge-locked'}" title="${b.desc}">
+                    <div class="badge-icon">${b.icon}</div>
+                    <div class="badge-name">${b.name}</div>
+                    <div class="badge-desc">${isEarned ? b.desc : 'Locked'}</div>
+                </div>`;
+            }).join('');
+        }
+
+        function renderHistory(history) {
+            const container = document.getElementById('history-list');
+            if (!history || history.length === 0) {
+                container.innerHTML = `<div class="no-history">
+                    <div class="no-h-icon">📝</div>
+                    <p>No quizzes yet! Take your first quiz to see history here.</p>
+                </div>`;
+                return;
+            }
+            container.innerHTML = history.map(h => {
+                const date = new Date(h.date).toLocaleDateString('en-IN', { day: '2-digit', month: 'short', year: 'numeric' });
+                const icon = SUBJECT_ICONS[h.subject] || '📚';
+                const pc = percClass(h.percentage);
+                const xpText = h.xpEarned ? `+${h.xpEarned} XP` : '';
+                return `<div class="history-item">
+                    <div class="history-left">
+                        <div class="history-subject-icon">${icon}</div>
+                        <div class="history-info">
+                            <div class="h-subject">${h.subject}</div>
+                            <div class="h-date">${date}</div>
+                        </div>
+                    </div>
+                    <div class="history-right">
+                        <span class="h-score">${h.score}/${h.total}</span>
+                        <span class="h-perc ${pc}">${h.percentage}%</span>
+                        ${xpText ? `<span class="h-xp">${xpText}</span>` : ''}
+                    </div>
+                </div>`;
+            }).join('');
+        }
+
+        function animateXPBar(xp, xpForCurrent, xpForNext) {
+            const xpInLevel = xp - xpForCurrent;
+            const xpNeeded = xpForNext - xpForCurrent;
+            const pct = Math.min(100, Math.round((xpInLevel / xpNeeded) * 100));
+            setTimeout(() => {
+                document.getElementById('xp-bar').style.width = pct + '%';
+            }, 400);
+        }
+
+        async function loadDashboard() {
+            const userEmail = localStorage.getItem('userEmail');
+            const userName = localStorage.getItem('userName');
+
+            if (!userEmail) {
+                window.location.href = 'login.html';
+                return;
+            }
+
+            try {
+                const res = await fetch(`/api/stats/${encodeURIComponent(userEmail)}`);
+                const data = await res.json();
+
+                document.getElementById('loading-screen').style.display = 'none';
+                document.getElementById('main-dashboard').style.display = 'block';
+
+                if (!data.success) {
+                    showToast('⚠️', 'Could not load stats', 'Please try again.');
+                    return;
+                }
+
+                const { xp, level, streak, rank, badges, subjectStats, recentHistory, totalQuizzes, xpForNext, xpForCurrent } = data;
+                const name = data.user?.name || userName || 'Aspirant';
+
+                // Hero
+                document.getElementById('hero-name').textContent = name;
+                const subText = totalQuizzes === 0
+                    ? 'Start your first quiz to earn XP and unlock achievements!'
+                    : `You've completed ${totalQuizzes} quiz${totalQuizzes > 1 ? 'zes' : ''} · Keep going! 🚀`;
+                document.getElementById('hero-sub').textContent = subText;
+
+                // Rank
+                document.getElementById('rank-icon').textContent = rank.icon;
+                document.getElementById('rank-title').textContent = rank.name;
+
+                // Level & XP
+                document.getElementById('level-num').textContent = level;
+                document.getElementById('next-level-num').textContent = Math.min(level + 1, 10);
+                document.getElementById('xp-label').textContent = `${xp} XP`;
+                animateXPBar(xp, xpForCurrent, xpForNext);
+
+                // Quick stats
+                document.getElementById('stat-xp').textContent = xp;
+                document.getElementById('stat-streak').textContent = streak;
+                document.getElementById('stat-total').textContent = totalQuizzes;
+                document.getElementById('stat-badges').textContent = badges.length;
+
+                // Subject chart
+                renderSubjects(subjectStats);
+
+                // Badges
+                renderBadges(badges);
+
+                // History
+                renderHistory(recentHistory);
+
+                // Toast on load
+                if (streak > 1) {
+                    showToast('🔥', `${streak}-Day Streak!`, 'Amazing consistency! Keep it up!', 800);
+                } else if (totalQuizzes === 0) {
+                    showToast('👋', `Welcome, ${name}!`, 'Take your first quiz to earn XP!', 800);
+                } else {
+                    showToast('⚡', `Level ${level} · ${xp} XP`, `${badges.length} badge${badges.length !== 1 ? 's' : ''} earned`, 800);
+                }
+
+            } catch (err) {
+                console.error('Dashboard load error:', err);
+                document.getElementById('loading-screen').style.display = 'none';
+                document.getElementById('main-dashboard').style.display = 'block';
+                showToast('❌', 'Connection Error', 'Could not load stats from server.');
+            }
+        }
+
+        function logout() {
+            localStorage.removeItem('userName');
+            localStorage.removeItem('userEmail');
+            window.location.href = 'login.html';
+        }
+
+        // Init
+        loadDashboard();
+    </script>
+</body>
+
+</html>

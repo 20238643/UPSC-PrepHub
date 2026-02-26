@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login | UPSC PrepHub</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --primary: #1a2a6c;
+            --accent: #f39c12;
+            --bg: #f4f7f6;
+            --success: #27ae60;
+            --danger: #e74c3c;
+        }
+
+        body {
+            margin: 0;
+            font-family: 'Inter', sans-serif;
+            background-color: var(--bg);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+
+        .auth-card {
+            background: white;
+            width: 100%;
+            max-width: 400px;
+            padding: 40px;
+            border-radius: 15px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+            text-align: center;
+        }
+
+        .logo-small {
+            font-weight: 800;
+            color: var(--primary);
+            text-decoration: none;
+            display: block;
+            margin-bottom: 20px;
+        }
+
+        .form-group {
+            text-align: left;
+            margin-bottom: 20px;
+        }
+
+        label {
+            display: block;
+            font-weight: 600;
+            margin-bottom: 8px;
+            font-size: 0.85rem;
+            color: var(--primary);
+        }
+
+        input {
+            width: 100%;
+            padding: 12px;
+            border: 1px solid #ddd;
+            border-radius: 8px;
+            box-sizing: border-box;
+            font-size: 1rem;
+            transition: 0.3s;
+        }
+
+        input:focus {
+            outline: none;
+            border-color: var(--accent);
+            box-shadow: 0 0 5px rgba(243, 156, 18, 0.2);
+        }
+
+        .btn-submit {
+            width: 100%;
+            background: var(--primary);
+            color: white;
+            padding: 14px;
+            border: none;
+            border-radius: 8px;
+            font-weight: bold;
+            cursor: pointer;
+            transition: 0.3s;
+            font-size: 1rem;
+        }
+
+        .btn-submit:hover {
+            background: #2a3a7c;
+        }
+
+        .btn-submit:disabled {
+            background: #95a5a6;
+            cursor: not-allowed;
+        }
+
+        .msg-banner {
+            display: none;
+            padding: 10px 16px;
+            border-radius: 8px;
+            font-size: 0.85rem;
+            font-weight: 600;
+            margin-bottom: 20px;
+            animation: fadeIn 0.3s ease;
+        }
+
+        .msg-banner.success {
+            display: block;
+            background: #eafaf1;
+            color: var(--success);
+            border: 1px solid #a9dfbf;
+        }
+
+        .msg-banner.error {
+            display: block;
+            background: #fdf0ef;
+            color: var(--danger);
+            border: 1px solid #f1948a;
+        }
+
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+                transform: translateY(-5px);
+            }
+
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <div class="auth-card">
+        <a href="index.html" class="logo-small">UPSC PREPHUB</a>
+        <h2>Welcome Back</h2>
+        <p>Log in to continue your preparation.</p>
+
+        <div class="msg-banner" id="msg-banner"></div>
+
+        <form id="loginForm">
+            <div class="form-group">
+                <label>Email Address</label>
+                <input type="email" id="email" required>
+            </div>
+            <div class="form-group">
+                <label>Password</label>
+                <input type="password" id="password" required>
+            </div>
+            <button type="submit" class="btn-submit" id="submitBtn">Sign In</button>
+        </form>
+        <p style="margin-top:20px; font-size:0.8rem;">Don't have an account? <a href="register.html"
+                style="color:var(--accent); text-decoration:none; font-weight:600;">Register here</a></p>
+    </div>
+
+    <script>
+        const form = document.getElementById('loginForm');
+        const banner = document.getElementById('msg-banner');
+        const submitBtn = document.getElementById('submitBtn');
+
+        function showMsg(text, type) {
+            banner.textContent = text;
+            banner.className = `msg-banner ${type}`;
+        }
+
+        form.addEventListener('submit', async (e) => {
+            e.preventDefault();
+            banner.className = 'msg-banner';
+
+            const email = document.getElementById('email').value.trim();
+            const password = document.getElementById('password').value;
+
+            submitBtn.disabled = true;
+            submitBtn.textContent = 'Signing in...';
+
+            try {
+                const response = await fetch('/login', {
+                    method: 'POST',
+                    headers: { 'Content-Type': 'application/json' },
+                    body: JSON.stringify({ email, password })
+                });
+
+                const result = await response.json();
+
+                if (result.success) {
+                    showMsg('✅ ' + result.message, 'success');
+                    localStorage.setItem('userName', result.user.name);
+                    localStorage.setItem('userEmail', result.user.email);
+                    setTimeout(() => { window.location.href = 'dashboard.html'; }, 800);
+                } else {
+                    showMsg('❌ ' + result.message, 'error');
+                    submitBtn.disabled = false;
+                    submitBtn.textContent = 'Sign In';
+                }
+            } catch (err) {
+                showMsg('❌ Could not connect to server. Please try again.', 'error');
+                submitBtn.disabled = false;
+                submitBtn.textContent = 'Sign In';
+            }
+        });
+    </script>
+</body>
+
+</html>
