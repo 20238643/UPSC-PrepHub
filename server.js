@@ -14,7 +14,7 @@ const app = express();
 app.use(express.json());
 app.use(cors());
 app.use(express.static('public'));
-g
+
 // ── MongoDB Connection ──
 mongoose.connect(process.env.MONGO_URI || 'mongodb://localhost:27017/miniproject')
     .then(() => console.log('✅ MongoDB connected to miniproject'))

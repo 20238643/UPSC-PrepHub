@@ -282,12 +282,12 @@
 },
 {
     "id": "geo_32",
-    "question_text": "The highest peak in India is:",
-    "option_a": "Kanchenjunga",
-    "option_b": "Nanda Devi",
-    "option_c": "K2",
-    "option_d": "Kamet",
-    "correct_option": "K2"
+    "question_text": "Which one of the following forms of settlement develops along either side of roads,rivers or canals ?",
+    "option_a": "Circular",
+    "option_b": "Linear",
+    "option_c": "Cross-Shaped",
+    "option_d": "Square",
+    "correct_option": "Linear"
 },
 {
     "id": "geo_33",
